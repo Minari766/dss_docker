@@ -82,7 +82,7 @@ main {
 .form-control-search {
     margin: 5px;
     display: block;
-    width: 200px;
+    width: 180px;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -1420,7 +1420,6 @@ a:hover {
     justify-content: start;
     vertical-align: middle;
     color: #080b4a;
-    font-weight: bold;
 }
 
 .navbar-toggler {
