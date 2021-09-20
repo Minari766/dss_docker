@@ -1,0 +1,221 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="my-4 text-center mb-0">{{ post_data.title }}</h2>
+<hr>
+<div class="author-created">
+    <div class="text_left author-created">
+    {% if post_data.author.icon %}
+        <img src="{{ post_data.author.icon.url }}" class="user-icon mr-2">
+    {% else %}
+        <img src="{% static 'img/user1.png' %}" alt="" class="user-icon mr-2">
+    {% endif %}
+        {{ post_data.author }}
+    </div>
+    <div class="text_right">{{ post_data.created|date:"Y/m/j" }}</div>
+</div>
+{% if post_data.image %}
+    <div class="mx-auto detail-img">
+        <img class="mt-2 d-block img-fluid rounded mb-1" src="{{ post_data.image.url }}" alt="">         
+    </div>
+{% else %}    
+    <div class="mx-auto detail-img">
+        <img class="mt-2 rounded img-fluid mb-md-0 mb-1" src="{% static 'img/no_image.png' %}" alt="">
+    </div>    
+{% endif %}
+
+<!-- タグ追加 -->
+<div class="d-flex justify-content-between align-items-center">
+    <div class="tag-container my-2 d-none d-sm-none d-md-none d-lg-none d-xl-block">
+        <div class="tag-design">
+            {{ post_data.category.url }}
+            {% if post_data.category|stringformat:"s" == "ストーリー" %}
+            <a href="{% url 'index' 'all' 'story' %}"><i class="fas fa-tags"></i>{{ post_data.category }}</a>
+            {% elif post_data.category|stringformat:"s" == "隠れミッキー" %}
+            <a href="{% url 'index' 'all' 'mickey' %}"><i class="fas fa-tags"></i>{{ post_data.category }}</a>
+            {% elif post_data.category|stringformat:"s" == "豆知識" %}
+            <a href="{% url 'index' 'all' 'trivia' %}"><i class="fas fa-tags"></i>{{ post_data.category }}</a>
+            {% elif post_data.category|stringformat:"s" == "その他" %}
+            <a href="{% url 'index' 'all' 'other' %}"><i class="fas fa-tags"></i>{{ post_data.category }}</a>
+            {% else %}
+            <a href="{% url 'index' 'all' 'all' %}">
+                <img src="{% static 'img/search.png' %}" alt="なんも" class="article-category-icon">
+            </a>
+            {% endif %}
+        </div>
+        <div class="tag-design">
+            {% if post_data.area|stringformat:"s" == "ワールドバザール" %}
+                <a href="{% url 'index' 'bazaar' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% elif post_data.area|stringformat:"s" == "アドベンチャーランド" %}
+                <a href="{% url 'index' 'adventure' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% elif post_data.area|stringformat:"s" == "ウエスタンランド" %}
+                <a href="{% url 'index' 'western' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% elif post_data.area|stringformat:"s" == "クリッターカントリー" %}
+                <a href="{% url 'index' 'critter' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% elif post_data.area|stringformat:"s" == "ファンタジーランド" %}
+                <a href="{% url 'index' 'fantasy' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% elif post_data.area|stringformat:"s" == "トゥーンタウン" %}
+                <a href="{% url 'index' 'toon' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% elif post_data.area|stringformat:"s" == "トゥモローランド" %}
+                <a href="{% url 'index' 'tomorrow' %}"><i class="fas fa-tags"></i>{{ post_data.area }}</a>
+            {% else %}
+                <a href="{% url 'index' 'all' %}">{{ post_data.area }}</a>
+            {% endif %}
+        </div>
+        <div class="tag-design">
+            {% if post_data.attraction|stringformat:"s" == "ワールドバザール（その他）" %}
+                <a href="{% url 'index' 'bazaar' 'bazaar-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "オムニバス" %}
+                <a href="{% url 'index' 'bazaar' 'omni' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ペニーアーケード" %}
+                <a href="{% url 'index' 'bazaar' 'penny' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ウエスタンリバー鉄道" %}
+                <a href="{% url 'index' 'adventure' 'riverline' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "カリブの海賊" %}
+                <a href="{% url 'index' 'adventure' 'carib' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ジャングルクルーズ" %}
+                <a href="{% url 'index' 'adventure' 'cruise' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "スイスファミリー・ツリーハウス" %}
+                <a href="{% url 'index' 'adventure' 'swiss' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "魅惑のチキルーム “アロハ・エ・コモ・マイ!”" %}
+                <a href="{% url 'index' 'adventure' 'swiss' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "アドベンチャーワールド（その他）" %}
+                <a href="{% url 'index' 'adventure' 'adventure-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "シューティングギャラリー" %}
+                <a href="{% url 'index' 'western' 'shooting' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "カントリーベア・シアター" %}
+                <a href="{% url 'index' 'western' 'bear' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "蒸気船マークトウェイン号" %}
+                <a href="{% url 'index' 'western' 'mark' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "トムソーヤ島いかだ" %}
+                <a href="{% url 'index' 'western' 'tom' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ビッグサンダー・マウンテン" %}
+                <a href="{% url 'index' 'western' 'big' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ウエスタンランド（その他）" %}
+                <a href="{% url 'index' 'western' 'western-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "スプラッシュ・マウンテン" %}
+                <a href="{% url 'index' 'critter' 'splash' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ビーバーブラザーズのカヌー探険" %}
+                <a href="{% url 'index' 'critter' 'canoe' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "クリッターカントリー（その他）" %}
+                <a href="{% url 'index' 'critter' 'critter-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "アリスのティーパーティー" %}
+                <a href="{% url 'index' 'fantasy' 'alice' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "イッツ・ア・スモールワールド" %}
+                <a href="{% url 'index' 'fantasy' 'small' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "白雪姫と七人のこびと" %}
+                <a href="{% url 'index' 'fantasy' 'snow' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "シンデレラのフェアリーテイル・ホール" %}
+                <a href="{% url 'index' 'fantasy' 'cinderella' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "空飛ぶダンボ" %}
+                <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == '美女と野獣“まほうのものがたり”' %}
+                <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ピーターパン空の旅" %}
+                <a href="{% url 'index' 'fantasy' 'peter' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ピノキオの冒険旅行" %}
+                <a href="{% url 'index' 'fantasy' 'pinocchio' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "プーさんのハニーハント" %}
+                <a href="{% url 'index' 'fantasy' 'pooh' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ホーンテッドマンション" %}
+                <a href="{% url 'index' 'fantasy' 'haunted' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ミッキーのフィルハーマジック" %}
+                <a href="{% url 'index' 'fantasy' 'philhar' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "キャッスルカルーセル" %}
+                <a href="{% url 'index' 'fantasy' 'carousel' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ファンタジーランド（その他）" %}
+                <a href="{% url 'index' 'fantasy' 'fantasy-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ガジェットのゴーコースター" %}
+                <a href="{% url 'index' 'toon' 'gadget' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "グーフィーのペイント＆プレイハウス" %}
+                <a href="{% url 'index' 'toon' 'goofy' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "チップとデールのツリーハウス" %}
+                <a href="{% url 'index' 'toon' 'chip' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "トゥーンパーク" %}
+                <a href="{% url 'index' 'toon' 'park' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ドナルドのボート" %}
+                <a href="{% url 'index' 'toon' 'donald' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ミニーの家" %}
+                <a href="{% url 'index' 'toon' 'minnie' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ロジャーラビットのカートゥーンスピン" %}
+                <a href="{% url 'index' 'toon' 'roger' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ミニーのスタイルスタジオ" %}
+                <a href="{% url 'index' 'toon' 'style' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ミッキーの家とミート・ミッキー" %}
+                <a href="{% url 'index' 'toon' 'mickey' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "トゥーンタウン（その他）" %}
+                <a href="{% url 'index' 'toon' 'toon-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "スター・ツアーズ：ザ・アドヴェンチャーズ・コンティニュー" %}
+                <a href="{% url 'index' 'tomorrow' 'tours' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "スティッチ・エンカウンター" %}
+                <a href="{% url 'index' 'tomorrow' 'stitch' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "スペース・マウンテン" %}
+                <a href="{% url 'index' 'tomorrow' 'space' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "バズ・ライトイヤーのアストロブラスター" %}
+                <a href="{% url 'index' 'tomorrow' 'buzz' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "ベイマックスのハッピーライド" %}
+                <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == 'モンスターズ・インク“ライド&ゴーシーク！”' %}
+                <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% elif post_data.attraction|stringformat:"s" == "トゥモローランド（その他）" %}
+                <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'all' %}"><i class="fas fa-tags"></i>{{ post_data.attraction|truncatechars:15 }}</a>
+            {% else %}
+                <a href="{% url 'index' 'all' %}">{{ post_data.attraction }}</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="d-flex mx-0 my-2 justify-content-start align-items-center">
+        <form action="{% url 'like' %}" method="POST">
+            {% csrf_token %}
+            {% if post_data.id in liked_list %}
+            <button id="like" name="{{ post_data.id }}"><i class="far fa-lg fa-heart liked-red">お気に入り</i></button>
+            {% else %}
+            <button id="like" name="{{ post_data.id }}"><i class="far fa-lg fa-heart liked-red">お気に入り</i></button>      
+            {% endif %}
+        </form>
+        <div name="{{ post_data.id }}-count" class="d-flex align-items-center count "> {{ post_data.like_set.count }} </div>
+    </div>
+</div>
+
+<p>{{ post_data.content|linebreaksbr }}</p>
+{% if request.user.id == post_data.author.id %}
+<hr>
+<div class="d-flex justify-content-center mb-5">
+    <a class="btn btn-warning mr-2" href="{% url 'post_edit' post_data.id %}">編集する</a>
+    <a class="btn btn-danger" href="{% url 'post_delete' post_data.id %}">削除する</a>    
+</div>
+{% endif %}
+
+{% endblock %}
+<!-- likeボタン -->
+{% block extra_js %}
+<script type="text/javascript">
+    $(document).ready(function(event){
+        $(document).on('click', '#like', function(event){
+            console.log($(this).attr('name'))
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'like' %}",
+                data: {
+                    'post_id': $(this).attr('name'),
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: 'json',
+                success: function(response){
+                    selector = document.getElementsByName(response.post_id);
+                    if(response.liked){
+                        $(selector).html("<i class='fas fa-lg fa-heart liked-button'>お気に入り</i>");
+                    }
+                    else {
+                        $(selector).html("<i class='far fa-lg fa-heart like-button'>お気に入り</i>");
+                    }
+                    selector2 = document.getElementsByName(response.post_id + "-count");
+                    $(selector2).text(response.count);
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

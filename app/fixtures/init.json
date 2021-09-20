@@ -1,0 +1,498 @@
+[
+    {
+        "model": "app.area",
+        "pk": 1,
+        "fields": {
+        "name": "----選択してください",
+        "slug": "area-select"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 2,
+        "fields": {
+        "name": "ワールドバザール",
+        "slug": "bazaar"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 3,
+        "fields": {
+        "name": "アドベンチャーランド",
+        "slug": "adventure"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 4,
+        "fields": {
+        "name": "ウエスタンランド",
+        "slug": "western"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 5,
+        "fields": {
+        "name": "クリッターカントリー",
+        "slug": "critter"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 6,
+        "fields": {
+        "name": "ファンタジーランド",
+        "slug": "fantasy"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 7,
+        "fields": {
+        "name": "トゥーンタウン",
+        "slug": "toon"
+        }
+    },
+    {
+        "model": "app.area",
+        "pk": 8,
+        "fields": {
+        "name": "トゥモローランド",
+        "slug": "tomorrow"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 1,
+        "fields": {
+        "name": "----エリアを選択してください",
+        "slug": "attraction-select"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 2,
+        "fields": {
+        "name": "オムニバス",
+        "slug": "omni"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 3,
+        "fields": {
+        "name": "ペニーアーケード",
+        "slug": "penny"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 4,
+        "fields": {
+        "name": "ワールドバザール（その他）",
+        "slug": "bazaar-other"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 5,
+        "fields": {
+        "name": "ウエスタンリバー鉄道",
+        "slug": "riverline"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 6,
+        "fields": {
+        "name": "カリブの海賊",
+        "slug": "carib"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 7,
+        "fields": {
+        "name": "ジャングルクルーズ",
+        "slug": "cruise"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 8,
+        "fields": {
+        "name": "スイスファミリー・ツリーハウス",
+        "slug": "swiss"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 9,
+        "fields": {
+        "name": "魅惑のチキルーム “アロハ・エ・コモ・マイ!”",
+        "slug": "tiki"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 10,
+        "fields": {
+        "name": "アドベチャーランド（その他）",
+        "slug": "adventure-other"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 11,
+        "fields": {
+        "name": "ウエスタンランド・シューティングギャラリー",
+        "slug": "shooting"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 12,
+        "fields": {
+        "name": "カントリーベア・シアター",
+        "slug": "bear"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 13,
+        "fields": {
+        "name": "蒸気船マークトウェイン号",
+        "slug": "mark"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 14,
+        "fields": {
+        "name": "トムソーヤ島いかだ",
+        "slug": "tom"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 15,
+        "fields": {
+        "name": "ビッグサンダー・マウンテン",
+        "slug": "big"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 16,
+        "fields": {
+        "name": "ウエスタンランド（その他）",
+        "slug": "western-other"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 17,
+        "fields": {
+        "name": "スプラッシュ・マウンテン",
+        "slug": "splash"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 18,
+        "fields": {
+        "name": "ビーバーブラザーズのカヌー探険",
+        "slug": "canoe"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 19,
+        "fields": {
+        "name": "クリッターカントリー（その他）",
+        "slug": "critter-other"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 20,
+        "fields": {
+        "name": "アリスのティーパーティー",
+        "slug": "alice"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 21,
+        "fields": {
+        "name": "イッツ・ア・スモールワールド",
+        "slug": "small"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 22,
+        "fields": {
+        "name": "白雪姫と七人のこびと",
+        "slug": "snow"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 23,
+        "fields": {
+        "name": "シンデレラのフェアリーテイル・ホール",
+        "slug": "cinderella"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 24,
+        "fields": {
+        "name": "空飛ぶダンボ",
+        "slug": "dumbo"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk":25,
+        "fields": {
+        "name": "美女と野獣“まほうのものがたり”",
+        "slug": "beast"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 26,
+        "fields": {
+        "name": "ピーターパン空の旅",
+        "slug": "peter"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 27,
+        "fields": {
+        "name": "ピノキオの冒険旅行",
+        "slug": "pinocchio"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 28,
+        "fields": {
+        "name": "プーさんのハニーハント",
+        "slug": "pooh"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 29,
+        "fields": {
+        "name": "ホーンテッドマンション",
+        "slug": "haunted"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 30,
+        "fields": {
+        "name": "ミッキーのフィルハーマジック",
+        "slug": "philhar"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 31,
+        "fields": {
+        "name": "キャッスルカルーセル",
+        "slug": "carousel"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 32,
+        "fields": {
+        "name": "ファンタジーランド（その他）",
+        "slug": "fantasy-other"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 33,
+        "fields": {
+        "name": "ガジェットのゴーコースター",
+        "slug": "gadget"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 34,
+        "fields": {
+        "name": "グーフィーのペイント＆プレイハウス",
+        "slug": "goofy"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 35,
+        "fields": {
+        "name": "チップとデールのツリーハウス",
+        "slug": "chip"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 36,
+        "fields": {
+        "name": "トゥーンパーク",
+        "slug": "park"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 37,
+        "fields": {
+        "name": "ドナルドのボート",
+        "slug": "donald"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 38,
+        "fields": {
+        "name": "ミニーの家",
+        "slug": "minnie"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 39,
+        "fields": {
+        "name": "ロジャーラビットのカートゥーンスピン",
+        "slug": "roger"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 40,
+        "fields": {
+        "name": "ミニーのスタイルスタジオ",
+        "slug": "style"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 41,
+        "fields": {
+        "name": "ミッキーの家とミート・ミッキー",
+        "slug": "mickey"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 42,
+        "fields": {
+        "name": "トゥーンタウン（その他）",
+        "slug": "toon-other"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 43,
+        "fields": {
+        "name": "スター・ツアーズ",
+        "slug": "tours"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 44,
+        "fields": {
+        "name": "スティッチ・エンカウンター",
+        "slug": "stitch"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 45,
+        "fields": {
+        "name": "スペース・マウンテン",
+        "slug": "space"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 46,
+        "fields": {
+        "name": "バズ・ライトイヤーのアストロブラスター",
+        "slug": "buzz"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 47,
+        "fields": {
+        "name": "ベイマックスのハッピーライド",
+        "slug": "baymax"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 48,
+        "fields": {
+        "name": "モンスターズ・インク“ライド&ゴーシーク！”",
+        "slug": "monsters"
+        }
+    },
+    {
+        "model": "app.attraction",
+        "pk": 49,
+        "fields": {
+        "name": "トゥモローランド（その他）",
+        "slug": "tomorrow-other"
+        }
+    },
+    {
+        "model": "app.category",
+        "pk": 1,
+        "fields": {
+        "name": "----選択してください",
+        "slug": "category-select"
+        }
+    },
+    {
+        "model": "app.category",
+        "pk": 2,
+        "fields": {
+        "name": "ストーリー",
+        "slug": "story"
+        }
+    },
+    {
+        "model": "app.category",
+        "pk": 3,
+        "fields": {
+        "name": "隠れミッキー",
+        "slug": "mickey"
+        }
+    },
+    {
+        "model": "app.category",
+        "pk": 4,
+        "fields": {
+        "name": "豆知識",
+        "slug": "trivia"
+        }
+    },
+    {
+        "model": "app.category",
+        "pk": 5,
+        "fields": {
+        "name": "その他",
+        "slug": "other"
+        }
+    }
+]

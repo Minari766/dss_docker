@@ -1,0 +1,19 @@
+{% extends "app/base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="ttl-bd mt-4 mb-4">お問い合わせ</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-info">送信</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

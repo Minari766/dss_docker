@@ -1,0 +1,12 @@
+{% extends "app/base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div>
+    <h3>エラー（404）</h3>
+    <p>お探しのページを見つけることができませんでした。疑問やご不明な点があれば<a href="{% url 'contact' %}">お問い合わせ</a>にてご連絡いただくか、一度<a href="/">ホーム</a>にお戻りください。</p>
+</div>
+
+
+{% endblock %}

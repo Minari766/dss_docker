@@ -1,0 +1,941 @@
+{% extends "app/base.html" %}
+{% load utils %}
+{% load static %}
+
+{% block content %}
+
+<!-- トップ絵部分 -->
+<header class="masthead">
+    <div class="container h-auto my-3">
+        <div class="row h-auto align-items-center">
+            <div class="col-12 text-center TDL-table">
+                {% if area == 'bazaar' %}
+                    <img src="{% static 'img/WorldBazaar.png' %}" alt="" class="top-pic-bazaar">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'bazaar' 'omni' 'story' %}" class="omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'story' %}" class="penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'story' %}" class="bazaar-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'bazaar' 'omni' 'mickey' %}" class="omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'mickey' %}" class="penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'mickey' %}" class="bazaar-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'bazaar' 'omni' 'trivia' %}" class="omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'trivia' %}" class="penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'trivia' %}" class="bazaar-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'bazaar' 'omni' 'other' %}" class="omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'other' %}" class="penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'other' %}" class="bazaar-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'bazaar' 'omni' 'all' %}" class="omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'all' %}" class="penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'all' %}" class="bazaar-other-link">その他</a>
+                    {% endif %}
+                {% elif area == 'adventure' %}
+                    <img src="{% static 'img/AdventureLand_cut.png' %}" alt="" class="top-pic">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'adventure' 'riverline' 'story' %}" class="riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'story' %}" class="carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'story' %}" class="cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'story' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'story' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'story' %}" class="adventure-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'adventure' 'riverline' 'mickey' %}" class="riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'mickey' %}" class="carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'mickey' %}" class="cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'mickey' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'mickey' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'mickey' %}" class="adventure-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'adventure' 'riverline' 'trivia' %}" class="riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'trivia' %}" class="carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'trivia' %}" class="cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'trivia' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'trivia' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'trivia' %}" class="adventure-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'adventure' 'riverline' 'other' %}" class="riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'other' %}" class="carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'other' %}" class="cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'other' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'other' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'other' %}" class="adventure-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'adventure' 'riverline' 'all' %}" class="riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'all' %}" class="carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'all' %}" class="cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'all' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'all' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'all' %}" class="adventure-other-link">その他</a>
+                    {% endif %}
+                {% elif area == 'western' %}
+                    <img src="{% static 'img/WesternLand_cut.png' %}" alt="" class="top-pic">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'western' 'shooting' 'story' %}" class="shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'story' %}" class="bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'story' %}" class="mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'story' %}" class="tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'story' %}" class="big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'story' %}" class="western-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'western' 'shooting' 'mickey' %}" class="shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'mickey' %}" class="bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'mickey' %}" class="mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'mickey' %}" class="tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'mickey' %}" class="big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'mickey' %}" class="western-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'western' 'shooting' 'trivia' %}" class="shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'trivia' %}" class="bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'trivia' %}" class="mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'trivia' %}" class="tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'trivia' %}" class="big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'trivia' %}" class="western-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'western' 'shooting' 'other' %}" class="shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'other' %}" class="bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'other' %}" class="mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'other' %}" class="tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'other' %}" class="big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'other' %}" class="western-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'western' 'shooting' 'all'  %}" class="shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'all' %}" class="bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'all' %}" class="mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'all' %}" class="tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'all' %}" class="big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'all' %}" class="western-other-link">その他</a>
+                    {% endif %}
+                {% elif area == 'critter' %}
+                    <img src="{% static 'img/Critter_cut2.png' %}" alt="" class="top-pic">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'critter' 'splash' 'story' %}" class="splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'story' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'story' %}" class="critter-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'critter' 'splash' 'mickey' %}" class="splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'mickey' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'mickey' %}" class="critter-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'critter' 'splash' 'trivia' %}" class="splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'trivia' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'trivia' %}" class="critter-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'critter' 'splash' 'other' %}" class="splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'other' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'other' %}" class="critter-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'critter' 'splash' 'all' %}" class="splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'all' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'all' %}" class="critter-other-link">その他</a>
+                    {% endif %}
+                {% elif area == 'fantasy' %}
+                    <img src="{% static 'img/FantasyLand.png' %}" alt="" class="top-pic">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'fantasy' 'alice' 'story' %}" class="alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'story' %}" class="small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'story' %}" class="carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'story' %}" class="snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'story' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'story' %}" class="dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'story' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'story' %}" class="peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'story' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'story' %}" class="pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'story' %}" class="haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'story' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'story' %}" class="fantasy-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'fantasy' 'alice' 'mickey' %}" class="alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'mickey' %}" class="small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'mickey' %}" class="carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'mickey' %}" class="snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'mickey' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'mickey' %}" class="dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'mickey' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'mickey' %}" class="peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'mickey' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'mickey' %}" class="pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'mickey' %}" class="haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'mickey' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'mickey' %}" class="fantasy-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'fantasy' 'alice' 'trivia' %}" class="alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'trivia' %}" class="small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'trivia' %}" class="carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'trivia' %}" class="snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'trivia' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'trivia' %}" class="dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'trivia' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'trivia' %}" class="peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'trivia' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'trivia' %}" class="pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'trivia' %}" class="haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'trivia' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'trivia' %}" class="fantasy-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'fantasy' 'alice' 'other' %}" class="alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'other' %}" class="small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'other' %}" class="carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'other' %}" class="snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'other' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'other' %}" class="dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'other' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'other' %}" class="peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'other' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'other' %}" class="pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'other' %}" class="haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'other' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'other' %}" class="fantasy-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'fantasy' 'alice' 'all' %}" class="alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'all' %}" class="small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'all' %}" class="carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'all' %}" class="snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'all' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}" class="dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'all' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'all' %}" class="peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'all' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'all' %}" class="pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'all' %}" class="haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'all' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'all' %}" class="fantasy-other-link">その他</a>
+                    {% endif %}
+                {% elif area == 'toon' %}
+                    <img src="{% static 'img/ToonTown_cut.png' %}" alt="" class="top-pic">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'toon' 'gadget' 'story' %}" class="gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'story' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'story' %}" class="chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'story' %}" class="park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'story' %}" class="donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'story' %}" class="minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'story' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'story' %}" class="style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'story' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'story' %}" class="toon-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'toon' 'gadget' 'mickey' %}" class="gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'mickey' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'mickey' %}" class="chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'mickey' %}" class="park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'mickey' %}" class="donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'mickey' %}" class="minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'mickey' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'mickey' %}" class="style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'mickey' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'mickey' %}" class="toon-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'toon' 'gadget' 'trivia' %}" class="gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'trivia' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'trivia' %}" class="chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'trivia' %}" class="park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'trivia' %}" class="donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'trivia' %}" class="minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'trivia' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'trivia' %}" class="style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'trivia' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'trivia' %}" class="toon-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'toon' 'gadget' 'other' %}" class="gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'other' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'other' %}" class="chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'other' %}" class="park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'other' %}" class="donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'other' %}" class="minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'other' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'other' %}" class="style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'other' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'other' %}" class="toon-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'toon' 'gadget' 'all' %}" class="gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'all' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'all' %}" class="chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'all' %}" class="park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'all' %}" class="donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'all' %}" class="minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'all' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'all' %}" class="style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'all' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'all' %}" class="toon-other-link">その他</a>
+                    {% endif %}
+                {% elif area == 'tomorrow' %}
+                    <img src="{% static 'img/TomorrowLand_cut.png' %}" alt="" class="top-pic">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'story' %}" class="tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'story' %}" class="stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'story' %}" class="space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'story' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'story' %}" class="baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'story' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'story' %}" class="tomorrow-other-link">その他</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'mickey' %}" class="tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'mickey' %}" class="stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'mickey' %}" class="space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'mickey' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'mickey' %}" class="baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'mickey' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'mickey' %}" class="tomorrow-other-link">その他</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'trivia' %}" class="tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'trivia' %}" class="stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'trivia' %}" class="space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'trivia' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'trivia' %}" class="baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'trivia' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'trivia' %}" class="tomorrow-other-link">その他</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'other' %}" class="tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'other' %}" class="stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'other' %}" class="space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'other' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'other' %}" class="baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'other' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'other' %}" class="tomorrow-other-link">その他</a>
+                    {% else %}
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'all' %}" class="tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'all' %}" class="stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'all' %}" class="space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'all' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}" class="baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'all' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'all' %}" class="tomorrow-other-link">その他</a>
+                    {% endif %}
+                {% else %}
+                    <img src="{% static 'img/TDL_top.png' %}" class="top-pic" alt="">
+                    {% if category == 'story' %}
+                        <a href="{% url 'index' 'bazaar' 'story' %}" class="bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'story' %}" class="adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'story' %}" class="western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'story' %}" class="critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'story' %}" class="fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'story' %}" class="toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'story' %}" class="tomorrow-link">トゥモローランド</a>
+                    {% elif category == 'mickey' %}
+                        <a href="{% url 'index' 'bazaar' 'mickey' %}" class="bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'mickey' %}" class="adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'mickey' %}" class="western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'mickey' %}" class="critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'mickey' %}" class="fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'mickey' %}" class="toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'mickey' %}" class="tomorrow-link">トゥモローランド</a>
+                    {% elif category == 'trivia' %}
+                        <a href="{% url 'index' 'bazaar' 'trivia' %}" class="bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'trivia' %}" class="adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'trivia' %}" class="western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'trivia' %}" class="critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'trivia' %}" class="fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'trivia' %}" class="toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'trivia' %}" class="tomorrow-link">トゥモローランド</a>
+                    {% elif category == 'other' %}
+                        <a href="{% url 'index' 'bazaar' 'other' %}" class="bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'other' %}" class="adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'other' %}" class="western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'other' %}" class="critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'other' %}" class="fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'other' %}" class="toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'other' %}" class="tomorrow-link">トゥモローランド</a>
+                    {% elif category == 'all' %}
+                        <a href="{% url 'index' 'bazaar' 'all' %}" class="bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'all' %}" class="adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'all' %}" class="western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'all' %}" class="critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'all' %}" class="fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'all' %}" class="toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'all' %}" class="tomorrow-link">トゥモローランド</a>
+                    {% else %}
+                        <a href="{% url 'index' 'bazaar' %}" class="bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' %}" class="adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' %}" class="western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' %}" class="critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' %}" class="fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' %}" class="toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' %}" class="tomorrow-link">トゥモローランド</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="picmenu">
+    <ul id="table-ul">
+        <li id="table-ul-all">
+            {% if area == 'bazaar' %}
+                <a href="{% url 'index' 'bazaar' 'all' %}" class="">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'bazaar' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'bazaar' attraction 'all' %}">
+                {% endif %}
+            {% elif area == 'adventure' %}
+                <a href="{% url 'index' 'adventure' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'adventure' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'adventure' attraction 'all' %}">
+                {% endif %}
+            {% elif area == 'western' %}
+                <a href="{% url 'index' 'western' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'western' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'western' attraction 'all' %}">
+                {% endif %}
+            {% elif area == 'critter' %}
+                <a href="{% url 'index' 'critter' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'critter' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'critter' attraction 'all' %}">
+                {% endif %}
+            {% elif area == 'fantasy' %}        
+                <a href="{% url 'index' 'fantasy' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'fantasy' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'fantasy' attraction 'all' %}">
+                {% endif %}
+            {% elif area == 'toon' %}
+                <a href="{% url 'index' 'toon' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'toon' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'toon' attraction 'all' %}">
+                {% endif %}
+            {% elif area == 'tomorrow' %}
+                <a href="{% url 'index' 'tomorrow' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'tomorrow' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'tomorrow' attraction 'all' %}">
+                {% endif %}
+            {% else %}
+                <a href="{% url 'index' 'all' 'all' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'all' 'all' %}">
+                {% else %}
+                    <a href="{% url 'index' 'all' attraction 'all' %}">
+                {% endif %}
+            {% endif %}
+                <img src="{% static 'img/star_fill.png' %}" alt="" class="icon-category" id="star" />
+                <p id="subete">全て</p>
+            </a>
+        </li>
+        <li id="table-ul-story">
+            {% if area == 'bazaar' %}
+                <a href="{% url 'index' 'bazaar' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'bazaar' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'bazaar' attraction 'story' %}">
+                {% endif %}
+            {% elif area == 'adventure' %}
+                <a href="{% url 'index' 'adventure' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'adventure' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'adventure' attraction 'story' %}">
+                {% endif %}
+            {% elif area == 'western' %}
+                <a href="{% url 'index' 'western' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'western' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'western' attraction 'story' %}">
+                {% endif %}
+            {% elif area == 'critter' %}
+                <a href="{% url 'index' 'critter' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'critter' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'critter' attraction 'story' %}">
+                {% endif %}
+            {% elif area == 'fantasy' %}
+                <a href="{% url 'index' 'fantasy' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'fantasy' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'fantasy' attraction 'story' %}">
+                {% endif %}
+            {% elif area == 'toon' %}
+                <a href="{% url 'index' 'toon' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'toon' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'toon' attraction 'story' %}">
+                {% endif %}
+            {% elif area == 'tomorrow' %}
+                <a href="{% url 'index' 'tomorrow' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'tomorrow' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'tomorrow' attraction 'story' %}">
+                {% endif %}
+            {% else %}
+                <a href="{% url 'index' 'all' 'story' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'all' 'story' %}">
+                {% else %}
+                    <a href="{% url 'index' 'all' attraction 'story' %}">
+                {% endif %}
+            {% endif %}
+                <img src="{% static 'img/memo_fill.png' %}" alt="" class="icon-category" id="memo" />
+                <p id="story">ストーリー</p>
+            </a>
+        </li>
+        <li id="table-ul-mickey">
+            {% if area == 'bazaar' %}
+                <a href="{% url 'index' 'bazaar' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'bazaar' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'bazaar' attraction 'mickey' %}">
+                {% endif %}
+            {% elif area == 'adventure' %}
+                <a href="{% url 'index' 'adventure' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'adventure' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'adventure' attraction 'mickey' %}">
+                {% endif %}
+            {% elif area == 'western' %}
+                <a href="{% url 'index' 'western' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'western' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'western' attraction 'mickey' %}">
+                {% endif %}
+            {% elif area == 'critter' %}
+                <a href="{% url 'index' 'critter' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'critter' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'critter' attraction 'mickey' %}">
+                {% endif %}
+            {% elif area == 'fantasy' %}
+            <a href="{% url 'index' 'fantasy' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'fantasy' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'fantasy' attraction 'mickey' %}">
+                {% endif %}
+            {% elif area == 'toon' %}
+                <a href="{% url 'index' 'toon' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'toon' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'toon' attraction 'mickey' %}">
+                {% endif %}
+            {% elif area == 'tomorrow' %}
+                <a href="{% url 'index' 'tomorrow' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'tomorrow' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'tomorrow' attraction 'mickey' %}">
+                {% endif %}
+            {% else %}
+                <a href="{% url 'index' 'all' 'mickey' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'all' 'mickey' %}">
+                {% else %}
+                    <a href="{% url 'index' 'all' attraction 'mickey' %}">
+                {% endif %}
+            {% endif %}
+                <img src="{% static 'img/mickey_fill.png' %}" alt="" class="icon-category" id="mickey" />
+                <p id="kakure">隠れミッキー</p>
+            </a>
+        </li>
+        <li id="table-ul-trivia" class="img-bulb"> 
+            {% if area == 'bazaar' %}
+                <a href="{% url 'index' 'bazaar' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'bazaar' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'bazaar' attraction 'trivia' %}">
+                {% endif %}
+            {% elif area == 'adventure' %}
+                <a href="{% url 'index' 'adventure' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'adventure' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'adventure' attraction 'trivia' %}">
+                {% endif %}
+            {% elif area == 'western' %}
+                <a href="{% url 'index' 'western' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'western' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'western' attraction 'trivia' %}">
+                {% endif %}
+            {% elif area == 'critter' %}
+                <a href="{% url 'index' 'critter' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'critter' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'critter' attraction 'trivia' %}">
+                {% endif %}
+            {% elif area == 'fantasy' %}
+                <a href="{% url 'index' 'fantasy' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'fantasy' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'fantasy' attraction 'trivia' %}">
+                {% endif %}
+            {% elif area == 'toon' %}
+                <a href="{% url 'index' 'toon' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'toon' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'toon' attraction 'trivia' %}">
+                {% endif %}
+            {% elif area == 'tomorrow' %}
+                <a href="{% url 'index' 'tomorrow' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'tomorrow' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'tomorrow' attraction 'trivia' %}">
+                {% endif %}
+            {% else %}
+                <a href="{% url 'index' 'all' 'trivia' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'all' 'trivia' %}">
+                {% else %}
+                    <a href="{% url 'index' 'all' attraction 'trivia' %}">
+                {% endif %}
+            {% endif %}
+                <img src="{% static 'img/bulb_fill.png' %}" alt="" class="icon-category" id="bulb" />
+                <p id="mame">豆知識</p>
+            </a>
+        </li>
+        <li id="table-ul-other">
+            {% if area == 'bazaar' %}
+                <a href="{% url 'index' 'bazaar' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'bazaar' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'bazaar' attraction 'other' %}">
+                {% endif %}
+            {% elif area == 'adventure' %}
+                <a href="{% url 'index' 'adventure' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'adventure' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'adventure' attraction 'other' %}">
+                {% endif %}
+            {% elif area == 'western' %}
+                <a href="{% url 'index' 'western' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'western' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'western' attraction 'other' %}">
+                {% endif %}
+            {% elif area == 'critter' %}
+                <a href="{% url 'index' 'critter' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'critter' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'critter' attraction 'other' %}">
+                {% endif %}
+            {% elif area == 'fantasy' %}
+                <a href="{% url 'index' 'fantasy' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'fantasy' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'fantasy' attraction 'other' %}">
+                {% endif %}
+            {% elif area == 'toon' %}
+                <a href="{% url 'index' 'toon' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'toon' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'toon' attraction 'other' %}">
+                {% endif %}
+            {% elif area == 'tomorrow' %}
+                <a href="{% url 'index' 'tomorrow' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'tomorrow' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'tomorrow' attraction 'other' %}">
+                {% endif %}
+            {% else %}
+                <a href="{% url 'index' 'all' 'other' %}">
+                {% if attraction is None %}
+                    <a href="{% url 'index' 'all' 'other' %}">
+                {% else %}
+                    <a href="{% url 'index' 'all' attraction 'other' %}">
+                {% endif %}
+            {% endif %}
+                <img src="{% static 'img/comment_fill.png' %}" alt="" class="icon-category" id="comment" />
+                <p id="sonohoka">その他</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- 投稿部分 -->
+{% for post in post_data %}
+<div class="row post-detail">
+    <div class="col-md-4 mx-auto">
+        <a href="{% url 'post_detail' post.id %}">
+            {% if post.image %}
+                <img class="img-fluid rounded mb-md-0 article-img" src="{{ post.image.url }}" alt="">
+            {% else %}    
+                <img class="img-fluid rounded mb-md-0 article-noimg" src="{% static 'img/no_image.png' %}" alt="">
+            {% endif %}
+        </a>
+    </div>
+    <div class="col-md-8 article">
+        <div class="author-created">
+            <h7 class="text_left author-created">
+            {% if post.author.icon %}
+                <img src="{{ post.author.icon.url }}" class="user-icon mr-2">
+            {% else %}
+                <img src="{% static 'img/user1.png' %}" class="user-icon mr-2">
+            {% endif %}
+                {{ post.author }}
+            </h7>
+            <h7 class="text_right">{{ post.created|date:"Y/m/j" }}</h7>
+        </div>
+        <div class="article-container">
+            <h3 class="article-title">{{ post.title|truncatechars:17}}</h3>
+        </div>
+        <div class="tag-container my-2 d-none d-sm-none d-md-none d-lg-none d-xl-block">
+            <div class="tag-design">
+                {{ post.category.url }}
+                {% if post.category|stringformat:"s" == "ストーリー" %}
+                <a href="{% url 'index' 'all' 'story' %}"><i class="fas fa-tags"></i>{{ post.category }}</a>
+                {% elif post.category|stringformat:"s" == "隠れミッキー" %}
+                <a href="{% url 'index' 'all' 'mickey' %}"><i class="fas fa-tags"></i>{{ post.category }}</a>
+                {% elif post.category|stringformat:"s" == "豆知識" %}
+                <a href="{% url 'index' 'all' 'trivia' %}"><i class="fas fa-tags"></i>{{ post.category }}</a>
+                {% elif post.category|stringformat:"s" == "その他" %}
+                <a href="{% url 'index' 'all' 'other' %}"><i class="fas fa-tags"></i>{{ post.category }}</a>
+                {% else %}
+                <a href="{% url 'index' 'all' 'all' %}">
+                    <img src="{% static 'img/search.png' %}" alt="なんも" class="article-category-icon">
+                </a>
+                {% endif %}
+            </div>
+            <div class="tag-design">
+                {% if post.area|stringformat:"s" == "ワールドバザール" %}
+                    <a href="{% url 'index' 'bazaar' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% elif post.area|stringformat:"s" == "アドベンチャーランド" %}
+                    <a href="{% url 'index' 'adventure' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% elif post.area|stringformat:"s" == "ウエスタンランド" %}
+                    <a href="{% url 'index' 'western' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% elif post.area|stringformat:"s" == "クリッターカントリー" %}
+                    <a href="{% url 'index' 'critter' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% elif post.area|stringformat:"s" == "ファンタジーランド" %}
+                    <a href="{% url 'index' 'fantasy' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% elif post.area|stringformat:"s" == "トゥーンタウン" %}
+                    <a href="{% url 'index' 'toon' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% elif post.area|stringformat:"s" == "トゥモローランド" %}
+                    <a href="{% url 'index' 'tomorrow' %}"><i class="fas fa-tags"></i>{{ post.area }}</a>
+                {% else %}
+                    <a href="{% url 'index' 'all' %}">{{ post.area }}</a>
+                {% endif %}
+            </div>
+            <div class="tag-design">
+                {% if post.attraction|stringformat:"s" == "ワールドバザール（その他）" %}
+                    <a href="{% url 'index' 'bazaar' 'bazaar-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "オムニバス" %}
+                    <a href="{% url 'index' 'bazaar' 'omni' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ペニーアーケード" %}
+                    <a href="{% url 'index' 'bazaar' 'penny' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ウエスタンリバー鉄道" %}
+                    <a href="{% url 'index' 'adventure' 'riverline' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "カリブの海賊" %}
+                    <a href="{% url 'index' 'adventure' 'carib' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ジャングルクルーズ" %}
+                    <a href="{% url 'index' 'adventure' 'cruise' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "スイスファミリー・ツリーハウス" %}
+                    <a href="{% url 'index' 'adventure' 'swiss' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "魅惑のチキルーム “アロハ・エ・コモ・マイ!”" %}
+                    <a href="{% url 'index' 'adventure' 'swiss' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "アドベンチャーワールド（その他）" %}
+                    <a href="{% url 'index' 'adventure' 'adventure-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ウエスタンランド・シューティングギャラリー" %}
+                    <a href="{% url 'index' 'western' 'shooting' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "カントリーベア・シアター" %}
+                    <a href="{% url 'index' 'western' 'bear' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "蒸気船マークトウェイン号" %}
+                    <a href="{% url 'index' 'western' 'mark' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "トムソーヤ島いかだ" %}
+                    <a href="{% url 'index' 'western' 'tom' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ビッグサンダー・マウンテン" %}
+                    <a href="{% url 'index' 'western' 'big' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ウエスタンランド（その他）" %}
+                    <a href="{% url 'index' 'western' 'western-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "スプラッシュ・マウンテン" %}
+                    <a href="{% url 'index' 'critter' 'splash' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ビーバーブラザーズのカヌー探険" %}
+                    <a href="{% url 'index' 'critter' 'canoe' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "クリッターカントリー（その他）" %}
+                    <a href="{% url 'index' 'critter' 'critter-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "アリスのティーパーティー" %}
+                    <a href="{% url 'index' 'fantasy' 'alice' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "イッツ・ア・スモールワールド" %}
+                    <a href="{% url 'index' 'fantasy' 'small' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "白雪姫と七人のこびと" %}
+                    <a href="{% url 'index' 'fantasy' 'snow' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "シンデレラのフェアリーテイル・ホール" %}
+                    <a href="{% url 'index' 'fantasy' 'cinderella' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "空飛ぶダンボ" %}
+                    <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == '美女と野獣“まほうのものがたり”' %}
+                    <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ピーターパン空の旅" %}
+                    <a href="{% url 'index' 'fantasy' 'peter' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ピノキオの冒険旅行" %}
+                    <a href="{% url 'index' 'fantasy' 'pinocchio' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "プーさんのハニーハント" %}
+                    <a href="{% url 'index' 'fantasy' 'pooh' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ホーンテッドマンション" %}
+                    <a href="{% url 'index' 'fantasy' 'haunted' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ミッキーのフィルハーマジック" %}
+                    <a href="{% url 'index' 'fantasy' 'philhar' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "キャッスルカルーセル" %}
+                    <a href="{% url 'index' 'fantasy' 'carousel' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ファンタジーランド（その他）" %}
+                    <a href="{% url 'index' 'fantasy' 'fantasy-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ガジェットのゴーコースター" %}
+                    <a href="{% url 'index' 'toon' 'gadget' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "グーフィーのペイント＆プレイハウス" %}
+                    <a href="{% url 'index' 'toon' 'goofy' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "チップとデールのツリーハウス" %}
+                    <a href="{% url 'index' 'toon' 'chip' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "トゥーンパーク" %}
+                    <a href="{% url 'index' 'toon' 'park' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ドナルドのボート" %}
+                    <a href="{% url 'index' 'toon' 'donald' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ミニーの家" %}
+                    <a href="{% url 'index' 'toon' 'minnie' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ロジャーラビットのカートゥーンスピン" %}
+                    <a href="{% url 'index' 'toon' 'roger' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ミニーのスタイルスタジオ" %}
+                    <a href="{% url 'index' 'toon' 'style' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ミッキーの家とミート・ミッキー" %}
+                    <a href="{% url 'index' 'toon' 'mickey' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "トゥーンタウン（その他）" %}
+                    <a href="{% url 'index' 'toon' 'toon-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "スター・ツアーズ：ザ・アドヴェンチャーズ・コンティニュー" %}
+                    <a href="{% url 'index' 'tomorrow' 'tours' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "スティッチ・エンカウンター" %}
+                    <a href="{% url 'index' 'tomorrow' 'stitch' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "スペース・マウンテン" %}
+                    <a href="{% url 'index' 'tomorrow' 'space' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "バズ・ライトイヤーのアストロブラスター" %}
+                    <a href="{% url 'index' 'tomorrow' 'buzz' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "ベイマックスのハッピーライド" %}
+                    <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == 'モンスターズ・インク“ライド&ゴーシーク！”' %}
+                    <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% elif post.attraction|stringformat:"s" == "トゥモローランド（その他）" %}
+                    <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'all' %}"><i class="fas fa-tags"></i>{{ post.attraction|truncatechars:15 }}</a>
+                {% else %}
+                    <a href="{% url 'index' 'all' %}">{{ post.attraction }}</a>
+                {% endif %}
+            </div>
+        </div>
+        <p>{{ post.content|truncatechars:115 }}</p>
+        <a class="article-more" href="{% url 'post_detail' post.id %}">もっと見る</a>
+    </div>
+</div>
+{% endfor %}
+
+<ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="?{% url_replace request 'page' page_obj.previous_page_number %}">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+    </li>
+    {% endif %}
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <li class="page-item active">
+            <a class="page-link" href="#!">
+                {{ num }}
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="?{%  url_replace request 'page' num %}">
+                {{ num }}
+            </a>
+        </li>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?{%  url_replace request 'page' page_obj.next_page_number %}">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    {% endif %}
+</ul>
+
+<div class="text-right">
+    <a href="{% url 'post_new' %}" class="btn btn-info">新しい記事を投稿</a>
+</div>
+{% endblock %}
+
+<!-- マウスオーバー変換 -->
+{% block extra_js %}
+<script type="text/javascript">
+// 色取得のコード
+window.onload = function() {
+        let url = window.location.href;
+        let indexOfLastSlash = url.lastIndexOf('/');
+        let indexOfLast2Slash = url.lastIndexOf('/', url.length-2);
+        let str = url.substring(indexOfLast2Slash+1, indexOfLastSlash)
+        var obj1 = document.getElementById("table-ul-all");
+        var obj2 = document.getElementById("table-ul-story");
+        var obj3 = document.getElementById("table-ul-mickey");
+        var obj4 = document.getElementById("table-ul-trivia");
+        var obj5 = document.getElementById("table-ul-other");
+        var obj1_img = document.getElementById("star");
+        var obj2_img = document.getElementById("memo");
+        var obj3_img = document.getElementById("mickey");
+        var obj4_img = document.getElementById("bulb");
+        var obj5_img = document.getElementById("comment");
+        var obj1_txt = document.getElementById("subete");
+        var obj2_txt = document.getElementById("story");
+        var obj3_txt = document.getElementById("kakure");
+        var obj4_txt = document.getElementById("mame");
+        var obj5_txt = document.getElementById("sonohoka");
+        if (str == "all"){
+            obj1.style.backgroundColor = "rgb(143, 218, 229)";
+            obj1_txt.style.color = "white";
+            obj1_img.src = "{% static 'img/star_white2.png' %}";
+        } else if (str == "story"){
+            obj2.style.backgroundColor = "rgb(143, 218, 229)";
+            obj2_txt.style.color = "white";
+            obj2_img.src = "{% static 'img/memo_white2.png' %}";
+        } else if (str == "mickey"){
+            obj3.style.backgroundColor = "rgb(143, 218, 229)";
+            obj3_txt.style.color = "white";
+            obj3_img.src = "{% static 'img/mickey_white2.png' %}";
+        } else if (str == "trivia"){
+            obj4.style.backgroundColor = "rgb(143, 218, 229)";
+            obj4_txt.style.color = "white";
+            obj4_img.src = "{% static 'img/bulb_white2.png' %}";
+        } else if (str == "other"){
+            obj5.style.backgroundColor = "rgb(143, 218, 229)";
+            obj5_txt.style.color = "white";
+            obj5_img.src = "{% static 'img/comment_white2.png' %}";
+        } else {
+            obj1.style.backgroundColor = "rgb(143, 218, 229)";
+            obj1_txt.style.color = "white";
+            obj1_img.src = "{% static 'img/star_white.png' %}";
+        }
+    }
+
+</script>
+
+{% endblock %}

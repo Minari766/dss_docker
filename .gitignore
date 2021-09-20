@@ -1,0 +1,11 @@
+myvenv
+db.sqlite3
+.vscode
+__pycache__
+*.pyc
+.DS_Store
+images
+media
+local_settings.py
+.env
+docker-compose.yml

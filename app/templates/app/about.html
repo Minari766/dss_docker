@@ -1,0 +1,56 @@
+{% extends "app/base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <h2 class="ttl-bd mt-4 mb-4">DISNEY SIDE STORIES作成の目的</h2>
+</div>
+<div class="container">
+    <div class="contents row">
+        <div class="col-xs-12 col-lg-6">
+            <p>　付き合いたての彼女を連れて訪れたディズニーランド。当時学生だった私は冷や汗をかいていました。</p>
+            <p>　（会話が進まない・・・）</p>
+            <p>　緊張のあまり話題が浮かばず、気まずさと焦りで重たい空気が漂い始めていました。</p>
+            <p>　そんな中、ふと目に入った隠れミッキーを話したところ嬉しそうにはしゃぐ彼女。</p>
+            <p>　一度深呼吸をしてから周りを見渡すと、建物のデザイン、色使い、細かなモニュメントや隠れミッキー等、パークの至る所にゲストを楽しませようとする工夫が散りばめられていることに気づきました。</p>
+            <p>　そんな無数の工夫を拾い上げ、会話に盛り込むことで自然と彼女との雰囲気も和らぎ、パークを出ることにはサイドのディズニーデートを約束するほど堪能していたのでした。</p>
+            
+        </div>
+        <div class="col-xs-12 col-lg-6 rounded">
+            <img src="{% static 'img/aboutDSS.png' %}" alt="" class="img-fluid aboutDSS">
+        </div>
+    </div>
+    <div class="contents row mt-5">
+        <div class="ccol-xs-12 col-lg-6 rounded">
+            <img src="{% static 'img/aboutDSS2.png' %}" alt="" class="img-fluid aboutDSS2">
+        </div>
+        <div class="col-xs-12 col-lg-6">
+            <p>　夢と魔法の国。全世界のディズニーランドの設計を行うイマジニア社の想像力とホスピタリティが創り上げるのは、お城やアトラクション等のきらびやかな建造物だけではありません。</p>
+            <p>　隠れミッキー等の簡単には気づけないような細部や、目には見えない時代背景等、これらを知ることで目に入るもの全てが魅力的に写り、園内での時間が更に楽しいものになるでしょう。</p>
+            <p>　全てのディズニーランドファン、これからファンになる人々、冷や汗をかいていた当時の自分のため、ディズニーランドの奥深さや楽しさを最大限伝えることを目的としてこのファンサイトを立ち上げました。</p>
+        </div>
+    </div>
+</div>
+<hr class="about-border">
+<div class="container mt-5">
+    <div class="profile row">
+        <div class="col-xs-12 col-lg-5">
+            <img src="{% static 'img/minari.png' %}" alt="" class="img-thumbnail rounded-circle img-profile mx-auto d-block">
+        </div>
+        <div class="col-xs-12 col-lg-7">
+            <h4>管理人：みなり</h4>
+            <p>パーク訪問実績：東京ディズニーランド、東京ディズニーシー、香港ディズニーランド、ウォルトディズニーワールド、ディズニーランドパリ
+                夢はクルーズ含め、全世界のディズニーランドをめぐること！
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <p class="about-p small">DISNEY SIDE STORIESは東京ディズニーリゾートにまつわる裏話やお得情報を共有・投稿するファンサイトです。<br>The Walt Disney Companyや株式会社オリエンタルランド等のディズニー関連会社とは一切関係ありません。</p>
+</div>
+
+
+    {% endblock %}

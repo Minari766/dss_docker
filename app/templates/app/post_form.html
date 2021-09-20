@@ -1,0 +1,318 @@
+{% extends "app/base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div>
+    <h2 class="ttl-bd mt-4 mb-4">投稿情報</h2>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="formpost">
+        <div>タイトル<span>※必須</span></div>
+        {% render_field form.title class="form-control" placeholder="タイトルを入力してください" %}
+    </div>
+    <div class="formpost">
+        <div>エリア<span>※必須</span></div>
+        {% render_field form.area class="form-control" placeholder="選択してください" %}
+    </div>
+    <div class="formpost">
+        <div>アトラクション<span>※必須</span></div>
+        {% render_field form.attraction class="form-control" placeholder="選択してください" %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                ※アトラクションを選択してください<br>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.attraction.non_field_errors %} 
+            ※{{ error }}
+        {% endfor %}
+    </div>
+    <div class="formpost">
+        <div>記事カテゴリ<span>※必須</span></div>
+        {% render_field form.category class="form-control" placeholder="選択してください" %}
+    </div>
+    <div class="formpost">
+        {{ form.image }}
+    </div>
+    <div class="formpost">
+        <div>本文（最大10,000文字）<span>※必須</span></div>
+        {% render_field form.content class="form-control" placeholder="" %}
+    </div>
+    <div class="text-center">
+        <button class="btn btn-info" type="submit">投稿確認画面へ進む</button>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const areaElement = $('#id_area');
+    const attractionElement = $('#id_attraction');
+    const area_attraction = {
+        '----選択してください': [
+            {
+                'value': '----エリアを選択してください',
+                'name': '----エリアを選択してください'
+            },
+        ],
+        'ワールドバザール': [
+            {
+                'value': 'オムニバス',
+                'name': 'オムニバス'
+            },
+            {
+                'value': 'ペニーアーケード',
+                'name': 'ペニーアーケード'
+            },
+            {
+                'value': 'ワールドバザール（その他）',
+                'name': 'ワールドバザール（その他）'
+            },
+        ],
+        'アドベンチャーランド': [
+            {
+                'value': 'ウエスタンリバー鉄道',
+                'name': 'ウエスタンリバー鉄道'
+            },
+            {
+                'value': 'カリブの海賊',
+                'name': 'カリブの海賊'
+            },
+            {
+                'value': 'ジャングルクルーズ',
+                'name': 'ジャングルクルーズ'
+            },
+            {
+                'value': 'スイスファミリー・ツリーハウス',
+                'name': 'スイスファミリー・ツリーハウス'
+            },
+            {
+                'value': '魅惑のチキルーム：スティッチ・プレゼンツ"アロハ・エ・コモ・マイ！"',
+                'name': '魅惑のチキルーム：スティッチ・プレゼンツ"アロハ・エ・コモ・マイ！"'
+            },
+            {
+                'value': 'レッツ・パーティグラ！',
+                'name': 'レッツ・パーティグラ！'
+            },
+            {
+                'value': 'ミッキーのレインボー・ルアウ',
+                'name': 'ミッキーのレインボー・ルアウ'
+            },
+            {
+                'value': 'シアターオーリンズ（キャラクターグリーティング）',
+                'name': 'シアターオーリンズ（キャラクターグリーティング）'
+            },
+            {
+                'value': 'アドベンチャーワールド（その他）',
+                'name': 'アドベンチャーワールド（その他）'
+            },
+        ],
+        'ウエスタンランド': [
+            {
+                'value': 'ウエスタンランド・シューティングギャラリー',
+                'name': 'ウエスタンランド・シューティングギャラリー'
+            },
+            {
+                'value': 'カントリーベア・シアター',
+                'name': 'カントリーベア・シアター'
+            },
+            {
+                'value': '蒸気船マークトウェイン号',
+                'name': '蒸気船マークトウェイン号'
+            },
+            {
+                'value': 'トムソーヤ島いかだ',
+                'name': 'トムソーヤ島いかだ'
+            },
+            {
+                'value': 'ビッグサンダー・マウンテン',
+                'name': 'ビッグサンダー・マウンテン'
+            },
+            // {
+            //     'value': 'ホースシュー・ラウンドアップ',
+            //     'name': 'ホースシュー・ラウンドアップ'
+            // },
+            // {
+            //     'value': 'ザ・ダイヤモンドホースシュー・プレゼンツ"ミッキー&カンパニー"',
+            //     'name': 'ザ・ダイヤモンドホースシュー・プレゼンツ"ミッキー&カンパニー"'
+            // },
+            // {
+            //     'value': 'ウッドチャック・グリーティングトレイル',
+            //     'name': 'ウッドチャック・グリーティングトレイル'
+            // },
+            // {
+            //     'value': 'プラザパビリオン・バンドスタンド前（キャラクターグリーティング）',
+            //     'name': 'プラザパビリオン・バンドスタンド前（キャラクターグリーティング）'
+            // },
+            {
+                'value': 'ウエスタンランド（その他）',
+                'name': 'ウエスタンランド（その他）'
+            },
+        ],
+        'クリッターカントリー': [
+            {
+                'value': 'スプラッシュ・マウンテン',
+                'name': 'スプラッシュ・マウンテン'
+            },
+            {
+                'value': 'ビーバーブラザーズのカヌー探検',
+                'name': 'ビーバーブラザーズのカヌー探検'
+            },
+            {
+                'value': 'クリッターカントリー（その他）',
+                'name': 'クリッターカントリー（その他）'
+            },
+        ],
+        'ファンタジーランド': [
+            {
+                'value': 'アリスのティーパーティー',
+                'name': 'アリスのティーパーティー'
+            },
+            {
+                'value': 'イッツ・ア・スモールワールド',
+                'name': 'イッツ・ア・スモールワールド'
+            },
+            {
+                'value': 'キャッスルカルーセル',
+                'name': 'キャッスルカルーセル'
+            },
+            {
+                'value': '白雪姫と七人のこびと',
+                'name': '白雪姫と七人のこびと'
+            },
+            {
+                'value': 'シンデレラのフェアリーテイル・ホール',
+                'name': 'シンデレラのフェアリーテイル・ホール'
+            },
+            {
+                'value': '空飛ぶダンボ',
+                'name': '空飛ぶダンボ'
+            },
+            {
+                'value': '美女と野獣"魔法のものがたり"',
+                'name': '美女と野獣"魔法のものがたり"'
+            },
+            {
+                'value': 'ピーターパン空の旅',
+                'name': 'ピーターパン空の旅'
+            },
+            {
+                'value': 'ピノキオの冒険旅行',
+                'name': 'ピノキオの冒険旅行'
+            },
+            {
+                'value': 'プーさんのハニーハント',
+                'name': 'プーさんのハニーハント'
+            },
+            {
+                'value': 'ホーンテッドマンション',
+                'name': 'ホーンテッドマンション'
+            },
+            {
+                'value': 'ミッキーのフィルハーマジック',
+                'name': 'ミッキーのフィルハーマジック'
+            },
+            {
+                'value': 'ファンタジーランド（その他）',
+                'name': 'ファンタジーランド（その他）'
+            },
+        ],
+        'トゥーンタウン': [
+            {
+                'value': 'ガジェットのゴーコースター',
+                'name': 'ガジェットのゴーコースター'
+            },
+            {
+                'value': 'グーフィーのペイント&プレイハウス',
+                'name': 'グーフィーのペイント&プレイハウス'
+            },
+            {
+                'value': 'チップとデールのツリーハウス',
+                'name': 'チップとデールのツリーハウス'
+            },
+            {
+                'value': 'トゥーンパーク',
+                'name': 'トゥーンパーク'
+            },
+            {
+                'value': 'ドナルドのボート',
+                'name': 'ドナルドのボート'
+            },
+            {
+                'value': 'ミニーの家',
+                'name': 'ミニーの家'
+            },
+            {
+                'value': 'ロジャーラビットのカートゥーンスピン',
+                'name': 'ロジャーラビットのカートゥーンスピン'
+            },
+            {
+                'value': 'ミニーのスタイルスタジオ',
+                'name': 'ミニーのスタイルスタジオ'
+            },
+            {
+                'value': 'ミッキーの家とミート・ミッキー',
+                'name': 'ミッキーの家とミート・ミッキー'
+            },
+            {
+                'value': 'トゥーンタウン（その他）',
+                'name': 'トゥーンタウン（その他）'
+            },
+        ],
+        'トゥモローランド': [
+            {
+                'value': 'スター・ツアーズ：ザ・アドヴェンチャーズ・コンティニュー',
+                'name': 'スター・ツアーズ：ザ・アドヴェンチャーズ・コンティニュー'
+            },
+            {
+                'value': 'スティッチ・エンカウンター',
+                'name': 'スティッチ・エンカウンター'
+            },
+            {
+                'value': 'スペース・マウンテン',
+                'name': 'スペース・マウンテン'
+            },
+            {
+                'value': 'バズ・ライトイヤーのアストロブラスター',
+                'name': 'バズ・ライトイヤーのアストロブラスター'
+            },
+            {
+                'value': 'ベイマックスのハッピーライド',
+                'name': 'ベイマックスのハッピーライド'
+            },
+            {
+                'value': 'モンスターズ・インク“ライド&ゴーシーク！”',
+                'name': 'モンスターズ・インク“ライド&ゴーシーク！”'
+            },
+            {
+                'value': 'トゥーンタウン（その他）',
+                'name': 'トゥーンタウン（その他）'
+            },
+        ],
+    };
+    const changeArea = (select) => {
+        attractionElement.children().remove();
+        const parentId = areaElement.val();
+        const categoryList = area_attraction[parentId];
+        for (const category of categoryList) {
+            const option = $('<option>');
+                option.val(category['value']);
+                option.text(category['name']);
+                attractionElement.append(option);
+            }
+            if (select !== undefined) {
+                attractionElement.val(select);
+            }
+        };
+    $('#id_area').on('change', () => {
+        changeArea();
+    });
+    if (areaElement.val()) {
+        const selectedCategory = attractionElement.val();
+        changeArea(selectedCategory);
+    }
+</script>
+{% endblock %}
