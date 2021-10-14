@@ -1,0 +1,10 @@
+# 一般的には latest ではなくバージョン指定して固定する
+FROM nginx:latest
+
+# nginx の設定ファイルを渡す
+COPY ./nginx/conf.d/ /etc/nginx/conf.d/
+
+# static ファイルを渡す
+# (Apache でいう /var/www/html)
+COPY ./static/ /usr/share/nginx/static/
+EXPOSE 8080

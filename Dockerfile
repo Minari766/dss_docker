@@ -1,3 +1,4 @@
+# FROM：dockerhubから持ってくる
 FROM python:3.8.3
 ENV PYTHONUNBUFFERED 1
 

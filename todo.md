@@ -1,0 +1,8 @@
+- Djangoアプリをコンテナ化する
+- コンテナ間を連携する
+  - Webサーバ(nginx)もコンテナ化
+- ★2021/10/14 done
+- docker-compose を使ってコンテナ間を連携する
+- EC2上で(sqlite3を使って)アプリケーションを実行する
+  - EC2インスタンスをUbuntuで作り直す(今はAmazon Linux2)
+- データベースをMySQLにする
