@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  # コンテナ名
+  # Web: nginxを動かす
+  web:
+    # まず初めに、使用するコンテナイメージを記述する
+    # buildを記載するとdocker-compose.ymlを基点とした.（currentディレクトリ配下）にあるDockerfileを元にコンテナを作成
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    # (今回は使わないけど)全くカスタマイズしない、既存のコンテナイメージをdockerhubから持ってきて使う場合
+    # image: nginx:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app
+  # app: Djangoを動かすコンテナ
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    ports:
+      - "8000:8000"
+
+  # db:
+  #   image: mysql:5.7
+  #   command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: django_docker
+  #     MYSQL_USER: user
+  #     MYSQL_PASSWORD: password
+  #   volumes:
+  #     - web-db-data:/var/lib/mysql
+  #     - ./sql:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - '3306:3306'
