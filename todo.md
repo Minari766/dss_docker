@@ -6,3 +6,18 @@
 - EC2上で(sqlite3を使って)アプリケーションを実行する
   - EC2インスタンスをUbuntuで作り直す(今はAmazon Linux2)
 - データベースをMySQLにする
+  - まずはDBコンテナを手動で起動して、連携する
+    - MySQLのバージョンは8.0.26(Tags で最新のバージョンを使う)
+    - ユーザ名: `user` => 環境変数`MYSQL_USER`
+    - パスワード: `password` => 環境変数`MYSQL_PASSWORD`
+    - データベース名: `django_docker` => 環境変数`MYSQL_DATABASE`
+    - ※オプションで必要なもの: `MYSQL_ROOT_PASSWORD=password`
+    - ⇒起動コマンドは「`docker run -e MYSQL_USER=user -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=django_docker ...`」
+  - ★2021/10/19 MySQL & Djangoの相性が悪いため DB にPostgreSQL を使う
+    - バージョン: 14.0
+    - 環境変数たち
+      - `POSTGRES_USER`
+      - `POSTGRES_PASSWORD`
+      - `POSTGRES_DB`
+      - 起動コマンド⇒`docker run -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=django_docker ...`
+  - docker-compose で一括起動させる

@@ -1,5 +1,5 @@
 Django==2.2.10
-mysqlclient==1.4.6
+psycopg2-binary
 django-allauth~=0.41.0
 django-widget-tweaks~=1.4.8
 Pillow~=2.2.1

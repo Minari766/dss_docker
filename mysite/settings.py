@@ -84,22 +84,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'django_docker',
+       'USER': 'user',
+       'PASSWORD': 'password',
+       'HOST': 'db',
+       'POST': '5432'
+   }
 }
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'django_docker',
-#        'USER': 'user',
-#        'PASSWORD': 'password',
-#        'HOST': 'db',
-#        'POST': '3306'
-#    }
-#}
 
 
 # Password validation
@@ -158,9 +151,9 @@ except ImportError:
 
 # ローカル用設定
 # local_setting.pyにてDEBUG = Trueの状態。（デフォルトでTrue）開発環境で使う。エラー時にエラーコードが表示される。
-if DEBUG:
-    ALLOWED_HOSTS = ['*']
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ALLOWED_HOSTS = ['*']
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # local_setting.pyにてDEBUG = Falseの状態。本番環境。
 if not DEBUG:
@@ -169,11 +162,10 @@ if not DEBUG:
     env = environ.Env()
     env.read_env(os.path.join(BASE_DIR,'.env'))
 
-    SECRET_KEY = env('SECRET_KEY')
+    # SECRET_KEY は local_settings.py のものを使うのでコメントアウト
+    # SECRET_KEY = env('SECRET_KEY')
     # ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-    ALLOWED_HOSTS = ['*']
 
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
