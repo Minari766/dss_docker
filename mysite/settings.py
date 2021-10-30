@@ -83,13 +83,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# 環境ごと(dev / stg / prod)にDBパラメータを制御する余地あり
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
        'NAME': 'django_docker',
        'USER': 'user',
        'PASSWORD': 'password',
-       'HOST': 'db',
+    #    'HOST': 'db',
+       'HOST': 'localhost',
        'POST': '5432'
    }
 }
