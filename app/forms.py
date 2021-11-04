@@ -9,50 +9,49 @@ from .models import Area, Attraction, Category
 class PostForm(forms.Form):
     # here
 
-    def __init__(self):
-        """__init__ メソッドは、必ず最初に実行される
-        (class ではなく instance の初期化時という意味で"最初")
+    def __init__(self, *args, **kwargs):
+        # __init__ メソッドは、必ず最初に実行される
+        # (class ではなく instance の初期化時という意味で"最初")
 
-        - 例え話
-            - class: 猫型ロボットの設計図
-            - instance: ドラえもん、ドラミちゃん、ドラ○○、…
-            - 設計図から実際のロボットを作り出す操作のことを「インスタンス化」という
+        # - 例え話
+        #     - class: 猫型ロボットの設計図
+        #     - instance: ドラえもん、ドラミちゃん、ドラ○○、…
+        #     - 設計図から実際のロボットを作り出す操作のことを「インスタンス化」という
 
-        ※インスタンス化
-        draemon = CatRobot(name='ドラえもん', color='yellow')
-        form = PostForm()
+        # ※インスタンス化
+        # draemon = CatRobot(name='ドラえもん', color='yellow')
 
-        ↑メソッドの呼び出しに似てる
-        def func():
-            ...
+        # ↑メソッドの呼び出しに似てる
+        # def func():
+        #     ...
 
-        ★↓このように書き換えたが、「title = ...」部分の処理で self 変数を参照できないためこれでもダメ。
-        ModelChoiceField を使うべし。
-        """
-        # area_data = Area.objects.all()
-        # self.area_choice = {}
-        # for area in area_data:
-        #     self.area_choice[area] = area
+        # ★↓このように書き換えたが、「title = ...」部分の処理で self 変数を参照できないためこれでもダメ。
+        # ModelChoiceField を使うべし。
+
+        area_data = Area.objects.all()
+        self.area_choice = {}
+        for area in area_data:
+            self.area_choice[area] = area
         
-        # attraction_data = Attraction.objects.all()
-        # self.attraction_choice = {}
-        # for attraction in attraction_data:
-        #     self.attraction_choice[attraction] = attraction
+        attraction_data = Attraction.objects.all()
+        self.attraction_choice = {}
+        for attraction in attraction_data:
+            self.attraction_choice[attraction] = attraction
 
-        # category_data = Category.objects.all()
-        # self.category_choice = {}
-        # for category in category_data:
-        #     self.category_choice[category] = category
+        category_data = Category.objects.all()
+        self.category_choice = {}
+        for category in category_data:
+            self.category_choice[category] = category
 
-    title = forms.CharField(max_length=50, label='タイトル')
-    # area = forms.ChoiceField(label='エリア', widget=forms.Select, choices=list(self.area_choice.items()), initial="----選択してください")
-    area = forms.ModelChoiceField(queryset=Area.objects.all(), label='エリア', widget=forms.Select, initial="----選択してください")
-    # attraction = forms.ChoiceField(label='アトラクション', widget=forms.Select, choices=list(self.attraction_choice.items()))
-    attraction = forms.ModelChoiceField(queryset=Attraction.objects.all(), label='アトラクション', widget=forms.Select, initial="----エリアを選択してください")
-    # category = forms.ChoiceField(label='カテゴリ', widget=forms.Select, choices=list(self.category_choice.items()), initial="----選択してください")
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), label='カテゴリ', widget=forms.Select, initial="----選択してください")
-    content = forms.CharField(label='内容', widget=forms.Textarea())
-    image = forms.ImageField(label='イメージ画像', required=False)
+        title = forms.CharField(max_length=50, label='タイトル')
+        # area = forms.ChoiceField(label='エリア', widget=forms.Select, choices=list(self.area_choice.items()), initial="----選択してください")
+        area = forms.ModelChoiceField(queryset=Area.objects.all(), label='エリア', widget=forms.Select, initial="----選択してください")
+        # attraction = forms.ChoiceField(label='アトラクション', widget=forms.Select, choices=list(self.attraction_choice.items()))
+        attraction = forms.ModelChoiceField(queryset=Attraction.objects.all(), label='アトラクション', widget=forms.Select, initial="----エリアを選択してください")
+        # category = forms.ChoiceField(label='カテゴリ', widget=forms.Select, choices=list(self.category_choice.items()), initial="----選択してください")
+        category = forms.ModelChoiceField(queryset=Category.objects.all(), label='カテゴリ', widget=forms.Select, initial="----選択してください")
+        content = forms.CharField(label='内容', widget=forms.Textarea())
+        image = forms.ImageField(label='イメージ画像', required=False)
 
     def clean_name(self):
         area = self.cleaned_data.get('area')

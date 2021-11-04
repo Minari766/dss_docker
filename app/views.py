@@ -67,9 +67,6 @@ class IndexView(View):
         area = self.kwargs.get('area')
         category = self.kwargs.get('category')
         attraction = self.kwargs.get('attraction')
-        print(area)
-        print(category)
-        print(attraction)
         post_data = self.area_select(post_data, category, area, attraction)
         post_data = self.attraction_select(post_data, category, area, attraction)
         post_data = self.category_select(post_data, category, area, attraction)
@@ -106,11 +103,12 @@ class PostDetailView(View):
 
 class CreatePostView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
-        form = PostForm(request.POST or None)
+        # form = PostForm(request.POST or None)
+        form = PostForm()
         return render(request, 'app/post_form.html', {
             'form': form
         })
-    
+
     def post(self, request, *args, **kwargs):
         form = PostForm(request.POST or None)
 

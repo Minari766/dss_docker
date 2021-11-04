@@ -20,6 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 
+# .env ファイルから環境変数を宣言する
+import environ
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
+
 
 
 # Application definition
@@ -90,8 +95,7 @@ DATABASES = {
        'NAME': 'django_docker',
        'USER': 'user',
        'PASSWORD': 'password',
-    #    'HOST': 'db',
-       'HOST': 'localhost',
+       'HOST': os.getenv('DATABASE_HOST', 'localhost'),
        'POST': '5432'
    }
 }
@@ -160,10 +164,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # local_setting.pyにてDEBUG = Falseの状態。本番環境。
 if not DEBUG:
     DEBUG = True
-    import environ
-    env = environ.Env()
-    env.read_env(os.path.join(BASE_DIR,'.env'))
-
     # SECRET_KEY は local_settings.py のものを使うのでコメントアウト
     # SECRET_KEY = env('SECRET_KEY')
     # ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
