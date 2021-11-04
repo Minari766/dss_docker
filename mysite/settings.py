@@ -90,14 +90,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # 環境ごと(dev / stg / prod)にDBパラメータを制御する余地あり
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'django_docker',
-       'USER': 'user',
-       'PASSWORD': 'password',
-       'HOST': os.getenv('DATABASE_HOST', 'localhost'),
-       'POST': '5432'
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_docker',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        # => 本番環境では "db" としたい (docker-compose.yml で制御)
+        'POST': '5432'
+    }
 }
 
 
