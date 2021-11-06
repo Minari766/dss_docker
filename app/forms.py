@@ -20,11 +20,11 @@ class PostForm(forms.Form):
     content = forms.CharField(label='内容', widget=forms.Textarea())
     image = forms.ImageField(label='イメージ画像', required=False)
 
-    def clean_name(self):
-        area = self.cleaned_data.get('area')
-        if area in ('ワールドバザール'):
-            self.add_error('area', 'お名前に禁止ワードが含まれています')
-        return area
+    # def clean_name(self):
+    #     area = self.cleaned_data.get('area')
+    #     if area in ('ワールドバザール'):
+    #         self.add_error('area', 'お名前に禁止ワードが含まれています')
+    #     return area
 
 CATEGORIES = (
     ('0', '----選択してください'),
