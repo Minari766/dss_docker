@@ -33,7 +33,7 @@
                         <a href="{% url 'index' 'bazaar' 'bazaar-other' 'all' %}" class="bazaar-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'adventure' %}
-                    <img src="{% static 'img/AdventureLand_cut.png' %}" alt="" class="top-pic">
+                    <img src="{% static 'img/AdventureLand.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
                         <a href="{% url 'index' 'adventure' 'riverline' 'story' %}" class="riverline-link">ウエスタンリバー鉄道</a>
                         <a href="{% url 'index' 'adventure' 'carib' 'story' %}" class="carib-link">カリブの海賊</a>
@@ -71,7 +71,7 @@
                         <a href="{% url 'index' 'adventure' 'adventure-other' 'all' %}" class="adventure-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'western' %}
-                    <img src="{% static 'img/WesternLand_cut.png' %}" alt="" class="top-pic">
+                    <img src="{% static 'img/WesternLand.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
                         <a href="{% url 'index' 'western' 'shooting' 'story' %}" class="shooting-link">シューティングギャラリー</a>
                         <a href="{% url 'index' 'western' 'bear' 'story' %}" class="bear-link">カントリーベア・シアター</a>
@@ -109,7 +109,7 @@
                         <a href="{% url 'index' 'western' 'western-other' 'all' %}" class="western-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'critter' %}
-                    <img src="{% static 'img/Critter_cut2.png' %}" alt="" class="top-pic">
+                    <img src="{% static 'img/CritterCountry.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
                         <a href="{% url 'index' 'critter' 'splash' 'story' %}" class="splash-link">スプラッシュ・マウンテン</a>
                         <a href="{% url 'index' 'critter' 'canoe' 'story' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
