@@ -82,7 +82,7 @@ main {
 .form-control-search {
     margin: 5px;
     display: block;
-    width: 200px;
+    width: 180px;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -240,16 +240,19 @@ a:hover {
     content:"\f099";
     font-family: "FontAwesome";
 }
+
 .icon-fb:before {
     color: #fff;
     content:"\f082";
     font-family: "FontAwesome";
 }
+
 .icon-gp:before {
     color: #fff;
     content:"\f0d5";
     font-family: "FontAwesome";
 }
+
 .icon-yt:before {
     color: #fff;
     content:"\f167";
@@ -272,7 +275,6 @@ a:hover {
     width: 80%;  
     height: 40%;
 }
-
 
 .icon-category{
     object-fit: contain;
@@ -320,7 +322,7 @@ a:hover {
     position: relative;
 }
 
-/* .Area Link  */
+/* Area Link */
 .area-link{
     position: absolute;
     -ms-transform: translate(-50%,-50%);
@@ -694,8 +696,13 @@ a:hover {
 }
 
 .about-border{
+    /* height: 200px; */
     border: bold;
     margin-top: 2rem;
+}
+
+.admin-info{
+
 }
 
 #user_status {
@@ -761,7 +768,6 @@ a:hover {
     justify-content: start;
     vertical-align: middle;
     color: #080b4a;
-    font-weight: bold;
 }
 
 .navbar-toggler {
@@ -821,6 +827,7 @@ a:hover {
 /* フッター */
 .footer{
     background-color: #f5fdfe;
+    /* background-color: #fff4e0; */
 }
 
 .link{
@@ -885,6 +892,7 @@ a:hover {
     justify-content: space-between;
 }
 
+
 .tag-container{
     display: flex;
     flex-direction: row;
@@ -930,6 +938,7 @@ span{
     padding: 15px;
 }
 
+
 .photo-frame{
     display: flex;
     justify-content: flex-start;
@@ -955,6 +964,8 @@ span{
     justify-content: flex-end;
 }
 
+/* 検索ボックス */
+
 /* お気に入りボックス */
 .liked-button{
     color: #ed638b;
@@ -973,6 +984,7 @@ span{
     width: 150px;
     height: auto;
     border: red;
+
 }
 
 #like{
@@ -991,6 +1003,7 @@ span{
     border-radius: 4px;
     padding: 5px;
     max-height: 620px;
+    /* height: auto; */
 }
 
 .sidebar-block{

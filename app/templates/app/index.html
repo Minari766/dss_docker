@@ -12,349 +12,349 @@
                 {% if area == 'bazaar' %}
                     <img src="{% static 'img/WorldBazaar.png' %}" alt="" class="top-pic-bazaar">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'bazaar' 'omni' 'story' %}" class="omni-link">オムニバス</a>
-                        <a href="{% url 'index' 'bazaar' 'penny' 'story' %}" class="penny-link">ペニーアーケード</a>
-                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'story' %}" class="bazaar-other-link">その他</a>
+                        <a href="{% url 'index' 'bazaar' 'omni' 'story' %}" class="attraction-link omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'story' %}" class="attraction-link penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'story' %}" class="attraction-link bazaar-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'bazaar' 'omni' 'mickey' %}" class="omni-link">オムニバス</a>
-                        <a href="{% url 'index' 'bazaar' 'penny' 'mickey' %}" class="penny-link">ペニーアーケード</a>
-                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'mickey' %}" class="bazaar-other-link">その他</a>
+                        <a href="{% url 'index' 'bazaar' 'omni' 'mickey' %}" class="attraction-link omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'mickey' %}" class="attraction-link penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'mickey' %}" class="attraction-link bazaar-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'bazaar' 'omni' 'trivia' %}" class="omni-link">オムニバス</a>
-                        <a href="{% url 'index' 'bazaar' 'penny' 'trivia' %}" class="penny-link">ペニーアーケード</a>
-                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'trivia' %}" class="bazaar-other-link">その他</a>
+                        <a href="{% url 'index' 'bazaar' 'omni' 'trivia' %}" class="attraction-link omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'trivia' %}" class="attraction-link penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'trivia' %}" class="attraction-link bazaar-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'bazaar' 'omni' 'other' %}" class="omni-link">オムニバス</a>
-                        <a href="{% url 'index' 'bazaar' 'penny' 'other' %}" class="penny-link">ペニーアーケード</a>
-                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'other' %}" class="bazaar-other-link">その他</a>
+                        <a href="{% url 'index' 'bazaar' 'omni' 'other' %}" class="attraction-link omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'other' %}" class="attraction-link penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'other' %}" class="attraction-link bazaar-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'bazaar' 'omni' 'all' %}" class="omni-link">オムニバス</a>
-                        <a href="{% url 'index' 'bazaar' 'penny' 'all' %}" class="penny-link">ペニーアーケード</a>
-                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'all' %}" class="bazaar-other-link">その他</a>
+                        <a href="{% url 'index' 'bazaar' 'omni' 'all' %}" class="attraction-link omni-link">オムニバス</a>
+                        <a href="{% url 'index' 'bazaar' 'penny' 'all' %}" class="attraction-link penny-link">ペニーアーケード</a>
+                        <a href="{% url 'index' 'bazaar' 'bazaar-other' 'all' %}" class="attraction-link bazaar-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'adventure' %}
                     <img src="{% static 'img/AdventureLand.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'adventure' 'riverline' 'story' %}" class="riverline-link">ウエスタンリバー鉄道</a>
-                        <a href="{% url 'index' 'adventure' 'carib' 'story' %}" class="carib-link">カリブの海賊</a>
-                        <a href="{% url 'index' 'adventure' 'cruise' 'story' %}" class="cruise-link">ジャングルクルーズ</a>
-                        <a href="{% url 'index' 'adventure' 'swiss' 'story' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
-                        <a href="{% url 'index' 'adventure' 'tiki' 'story' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
-                        <a href="{% url 'index' 'adventure' 'adventure-other' 'story' %}" class="adventure-other-link">その他</a>
+                        <a href="{% url 'index' 'adventure' 'riverline' 'story' %}" class="attraction-link riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'story' %}" class="attraction-link carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'story' %}" class="attraction-link cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'story' %}" class="attraction-link swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'story' %}" class="attraction-link tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'story' %}" class="attraction-link adventure-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'adventure' 'riverline' 'mickey' %}" class="riverline-link">ウエスタンリバー鉄道</a>
-                        <a href="{% url 'index' 'adventure' 'carib' 'mickey' %}" class="carib-link">カリブの海賊</a>
-                        <a href="{% url 'index' 'adventure' 'cruise' 'mickey' %}" class="cruise-link">ジャングルクルーズ</a>
-                        <a href="{% url 'index' 'adventure' 'swiss' 'mickey' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
-                        <a href="{% url 'index' 'adventure' 'tiki' 'mickey' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
-                        <a href="{% url 'index' 'adventure' 'adventure-other' 'mickey' %}" class="adventure-other-link">その他</a>
+                        <a href="{% url 'index' 'adventure' 'riverline' 'mickey' %}" class="attraction-link riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'mickey' %}" class="attraction-link carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'mickey' %}" class="attraction-link cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'mickey' %}" class="attraction-link swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'mickey' %}" class="attraction-link tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'mickey' %}" class="attraction-link adventure-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'adventure' 'riverline' 'trivia' %}" class="riverline-link">ウエスタンリバー鉄道</a>
-                        <a href="{% url 'index' 'adventure' 'carib' 'trivia' %}" class="carib-link">カリブの海賊</a>
-                        <a href="{% url 'index' 'adventure' 'cruise' 'trivia' %}" class="cruise-link">ジャングルクルーズ</a>
-                        <a href="{% url 'index' 'adventure' 'swiss' 'trivia' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
-                        <a href="{% url 'index' 'adventure' 'tiki' 'trivia' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
-                        <a href="{% url 'index' 'adventure' 'adventure-other' 'trivia' %}" class="adventure-other-link">その他</a>
+                        <a href="{% url 'index' 'adventure' 'riverline' 'trivia' %}" class="attraction-link riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'trivia' %}" class="attraction-link carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'trivia' %}" class="attraction-link cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'trivia' %}" class="attraction-link swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'trivia' %}" class="attraction-link tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'trivia' %}" class="attraction-link adventure-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'adventure' 'riverline' 'other' %}" class="riverline-link">ウエスタンリバー鉄道</a>
-                        <a href="{% url 'index' 'adventure' 'carib' 'other' %}" class="carib-link">カリブの海賊</a>
-                        <a href="{% url 'index' 'adventure' 'cruise' 'other' %}" class="cruise-link">ジャングルクルーズ</a>
-                        <a href="{% url 'index' 'adventure' 'swiss' 'other' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
-                        <a href="{% url 'index' 'adventure' 'tiki' 'other' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
-                        <a href="{% url 'index' 'adventure' 'adventure-other' 'other' %}" class="adventure-other-link">その他</a>
+                        <a href="{% url 'index' 'adventure' 'riverline' 'other' %}" class="attraction-link riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'other' %}" class="attraction-link carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'other' %}" class="attraction-link cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'other' %}" class="attraction-link swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'other' %}" class="attraction-link tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'other' %}" class="attraction-link adventure-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'adventure' 'riverline' 'all' %}" class="riverline-link">ウエスタンリバー鉄道</a>
-                        <a href="{% url 'index' 'adventure' 'carib' 'all' %}" class="carib-link">カリブの海賊</a>
-                        <a href="{% url 'index' 'adventure' 'cruise' 'all' %}" class="cruise-link">ジャングルクルーズ</a>
-                        <a href="{% url 'index' 'adventure' 'swiss' 'all' %}" class="swiss-link">スイスファミリー・ツリーハウス</a>
-                        <a href="{% url 'index' 'adventure' 'tiki' 'all' %}" class="tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
-                        <a href="{% url 'index' 'adventure' 'adventure-other' 'all' %}" class="adventure-other-link">その他</a>
+                        <a href="{% url 'index' 'adventure' 'riverline' 'all' %}" class="attraction-link riverline-link">ウエスタンリバー鉄道</a>
+                        <a href="{% url 'index' 'adventure' 'carib' 'all' %}" class="attraction-link carib-link">カリブの海賊</a>
+                        <a href="{% url 'index' 'adventure' 'cruise' 'all' %}" class="attraction-link cruise-link">ジャングルクルーズ</a>
+                        <a href="{% url 'index' 'adventure' 'swiss' 'all' %}" class="attraction-link swiss-link">スイスファミリー・ツリーハウス</a>
+                        <a href="{% url 'index' 'adventure' 'tiki' 'all' %}" class="attraction-link tiki-link">魅惑のチキルーム <br>“アロハ・エ・コモ・マイ!”</a>
+                        <a href="{% url 'index' 'adventure' 'adventure-other' 'all' %}" class="attraction-link adventure-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'western' %}
                     <img src="{% static 'img/WesternLand.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'western' 'shooting' 'story' %}" class="shooting-link">シューティングギャラリー</a>
-                        <a href="{% url 'index' 'western' 'bear' 'story' %}" class="bear-link">カントリーベア・シアター</a>
-                        <a href="{% url 'index' 'western' 'mark' 'story' %}" class="mark-link">蒸気船マークトウェイン号</a>
-                        <a href="{% url 'index' 'western' 'tom' 'story' %}" class="tom-link">トムソーヤ島いかだ</a>
-                        <a href="{% url 'index' 'western' 'big' 'story' %}" class="big-link">ビッグサンダー・マウンテン</a>
-                        <a href="{% url 'index' 'western' 'western-other' 'story' %}" class="western-other-link">その他</a>
+                        <a href="{% url 'index' 'western' 'shooting' 'story' %}" class="attraction-link shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'story' %}" class="attraction-link bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'story' %}" class="attraction-link mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'story' %}" class="attraction-link tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'story' %}" class="attraction-link big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'story' %}" class="attraction-link western-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'western' 'shooting' 'mickey' %}" class="shooting-link">シューティングギャラリー</a>
-                        <a href="{% url 'index' 'western' 'bear' 'mickey' %}" class="bear-link">カントリーベア・シアター</a>
-                        <a href="{% url 'index' 'western' 'mark' 'mickey' %}" class="mark-link">蒸気船マークトウェイン号</a>
-                        <a href="{% url 'index' 'western' 'tom' 'mickey' %}" class="tom-link">トムソーヤ島いかだ</a>
-                        <a href="{% url 'index' 'western' 'big' 'mickey' %}" class="big-link">ビッグサンダー・マウンテン</a>
-                        <a href="{% url 'index' 'western' 'western-other' 'mickey' %}" class="western-other-link">その他</a>
+                        <a href="{% url 'index' 'western' 'shooting' 'mickey' %}" class="attraction-link shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'mickey' %}" class="attraction-link bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'mickey' %}" class="attraction-link mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'mickey' %}" class="attraction-link tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'mickey' %}" class="attraction-link big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'mickey' %}" class="attraction-link western-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'western' 'shooting' 'trivia' %}" class="shooting-link">シューティングギャラリー</a>
-                        <a href="{% url 'index' 'western' 'bear' 'trivia' %}" class="bear-link">カントリーベア・シアター</a>
-                        <a href="{% url 'index' 'western' 'mark' 'trivia' %}" class="mark-link">蒸気船マークトウェイン号</a>
-                        <a href="{% url 'index' 'western' 'tom' 'trivia' %}" class="tom-link">トムソーヤ島いかだ</a>
-                        <a href="{% url 'index' 'western' 'big' 'trivia' %}" class="big-link">ビッグサンダー・マウンテン</a>
-                        <a href="{% url 'index' 'western' 'western-other' 'trivia' %}" class="western-other-link">その他</a>
+                        <a href="{% url 'index' 'western' 'shooting' 'trivia' %}" class="attraction-link shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'trivia' %}" class="attraction-link bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'trivia' %}" class="attraction-link mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'trivia' %}" class="attraction-link tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'trivia' %}" class="attraction-link big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'trivia' %}" class="attraction-link western-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'western' 'shooting' 'other' %}" class="shooting-link">シューティングギャラリー</a>
-                        <a href="{% url 'index' 'western' 'bear' 'other' %}" class="bear-link">カントリーベア・シアター</a>
-                        <a href="{% url 'index' 'western' 'mark' 'other' %}" class="mark-link">蒸気船マークトウェイン号</a>
-                        <a href="{% url 'index' 'western' 'tom' 'other' %}" class="tom-link">トムソーヤ島いかだ</a>
-                        <a href="{% url 'index' 'western' 'big' 'other' %}" class="big-link">ビッグサンダー・マウンテン</a>
-                        <a href="{% url 'index' 'western' 'western-other' 'other' %}" class="western-other-link">その他</a>
+                        <a href="{% url 'index' 'western' 'shooting' 'other' %}" class="attraction-link shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'other' %}" class="attraction-link bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'other' %}" class="attraction-link mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'other' %}" class="attraction-link tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'other' %}" class="attraction-link big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'other' %}" class="attraction-link western-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'western' 'shooting' 'all'  %}" class="shooting-link">シューティングギャラリー</a>
-                        <a href="{% url 'index' 'western' 'bear' 'all' %}" class="bear-link">カントリーベア・シアター</a>
-                        <a href="{% url 'index' 'western' 'mark' 'all' %}" class="mark-link">蒸気船マークトウェイン号</a>
-                        <a href="{% url 'index' 'western' 'tom' 'all' %}" class="tom-link">トムソーヤ島いかだ</a>
-                        <a href="{% url 'index' 'western' 'big' 'all' %}" class="big-link">ビッグサンダー・マウンテン</a>
-                        <a href="{% url 'index' 'western' 'western-other' 'all' %}" class="western-other-link">その他</a>
+                        <a href="{% url 'index' 'western' 'shooting' 'all'  %}" class="attraction-link shooting-link">シューティングギャラリー</a>
+                        <a href="{% url 'index' 'western' 'bear' 'all' %}" class="attraction-link bear-link">カントリーベア・シアター</a>
+                        <a href="{% url 'index' 'western' 'mark' 'all' %}" class="attraction-link mark-link">蒸気船マークトウェイン号</a>
+                        <a href="{% url 'index' 'western' 'tom' 'all' %}" class="attraction-link tom-link">トムソーヤ島いかだ</a>
+                        <a href="{% url 'index' 'western' 'big' 'all' %}" class="attraction-link big-link">ビッグサンダー・マウンテン</a>
+                        <a href="{% url 'index' 'western' 'western-other' 'all' %}" class="attraction-link western-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'critter' %}
                     <img src="{% static 'img/CritterCountry.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'critter' 'splash' 'story' %}" class="splash-link">スプラッシュ・マウンテン</a>
-                        <a href="{% url 'index' 'critter' 'canoe' 'story' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
-                        <a href="{% url 'index' 'critter' 'critter-other' 'story' %}" class="critter-other-link">その他</a>
+                        <a href="{% url 'index' 'critter' 'splash' 'story' %}" class="attraction-link splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'story' %}" class="attraction-link canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'story' %}" class="attraction-link critter-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'critter' 'splash' 'mickey' %}" class="splash-link">スプラッシュ・マウンテン</a>
-                        <a href="{% url 'index' 'critter' 'canoe' 'mickey' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
-                        <a href="{% url 'index' 'critter' 'critter-other' 'mickey' %}" class="critter-other-link">その他</a>
+                        <a href="{% url 'index' 'critter' 'splash' 'mickey' %}" class="attraction-link splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'mickey' %}" class="attraction-link canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'mickey' %}" class="attraction-link critter-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'critter' 'splash' 'trivia' %}" class="splash-link">スプラッシュ・マウンテン</a>
-                        <a href="{% url 'index' 'critter' 'canoe' 'trivia' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
-                        <a href="{% url 'index' 'critter' 'critter-other' 'trivia' %}" class="critter-other-link">その他</a>
+                        <a href="{% url 'index' 'critter' 'splash' 'trivia' %}" class="attraction-link splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'trivia' %}" class="attraction-link canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'trivia' %}" class="attraction-link critter-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'critter' 'splash' 'other' %}" class="splash-link">スプラッシュ・マウンテン</a>
-                        <a href="{% url 'index' 'critter' 'canoe' 'other' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
-                        <a href="{% url 'index' 'critter' 'critter-other' 'other' %}" class="critter-other-link">その他</a>
+                        <a href="{% url 'index' 'critter' 'splash' 'other' %}" class="attraction-link splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'other' %}" class="attraction-link canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'other' %}" class="attraction-link critter-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'critter' 'splash' 'all' %}" class="splash-link">スプラッシュ・マウンテン</a>
-                        <a href="{% url 'index' 'critter' 'canoe' 'all' %}" class="canoe-link">ビーバーブラザーズのカヌー探険</a>
-                        <a href="{% url 'index' 'critter' 'critter-other' 'all' %}" class="critter-other-link">その他</a>
+                        <a href="{% url 'index' 'critter' 'splash' 'all' %}" class="attraction-link splash-link">スプラッシュ・マウンテン</a>
+                        <a href="{% url 'index' 'critter' 'canoe' 'all' %}" class="attraction-link canoe-link">ビーバーブラザーズのカヌー探険</a>
+                        <a href="{% url 'index' 'critter' 'critter-other' 'all' %}" class="attraction-link critter-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'fantasy' %}
                     <img src="{% static 'img/FantasyLand.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'fantasy' 'alice' 'story' %}" class="alice-link">アリスのティーパーティー</a>
-                        <a href="{% url 'index' 'fantasy' 'small' 'story' %}" class="small-link">イッツ・ア・スモールワールド</a>
-                        <a href="{% url 'index' 'fantasy' 'carousel' 'story' %}" class="carousel-link">キャッスルカルーセル</a>
-                        <a href="{% url 'index' 'fantasy' 'snow' 'story' %}" class="snow-link">白雪姫と七人のこびと</a>
-                        <a href="{% url 'index' 'fantasy' 'cinderella' 'story' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
-                        <a href="{% url 'index' 'fantasy' 'dumbo' 'story' %}" class="dumbo-link">空飛ぶダンボ</a>
-                        <a href="{% url 'index' 'fantasy' 'beast' 'story' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
-                        <a href="{% url 'index' 'fantasy' 'peter' 'story' %}" class="peter-link">ピーターパン空の旅</a>
-                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'story' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
-                        <a href="{% url 'index' 'fantasy' 'pooh' 'story' %}" class="pooh-link">プーさんのハニーハント</a>
-                        <a href="{% url 'index' 'fantasy' 'haunted' 'story' %}" class="haunted-link">ホーンテッドマンション</a>
-                        <a href="{% url 'index' 'fantasy' 'philhar' 'story' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
-                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'story' %}" class="fantasy-other-link">その他</a>
+                        <a href="{% url 'index' 'fantasy' 'alice' 'story' %}" class="attraction-link alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'story' %}" class="attraction-link small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'story' %}" class="attraction-link carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'story' %}" class="attraction-link snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'story' %}" class="attraction-link cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'story' %}" class="attraction-link dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'story' %}" class="attraction-link beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'story' %}" class="attraction-link peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'story' %}" class="attraction-link pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'story' %}" class="attraction-link pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'story' %}" class="attraction-link haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'story' %}" class="attraction-link philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'story' %}" class="attraction-link fantasy-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'fantasy' 'alice' 'mickey' %}" class="alice-link">アリスのティーパーティー</a>
-                        <a href="{% url 'index' 'fantasy' 'small' 'mickey' %}" class="small-link">イッツ・ア・スモールワールド</a>
-                        <a href="{% url 'index' 'fantasy' 'carousel' 'mickey' %}" class="carousel-link">キャッスルカルーセル</a>
-                        <a href="{% url 'index' 'fantasy' 'snow' 'mickey' %}" class="snow-link">白雪姫と七人のこびと</a>
-                        <a href="{% url 'index' 'fantasy' 'cinderella' 'mickey' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
-                        <a href="{% url 'index' 'fantasy' 'dumbo' 'mickey' %}" class="dumbo-link">空飛ぶダンボ</a>
-                        <a href="{% url 'index' 'fantasy' 'beast' 'mickey' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
-                        <a href="{% url 'index' 'fantasy' 'peter' 'mickey' %}" class="peter-link">ピーターパン空の旅</a>
-                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'mickey' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
-                        <a href="{% url 'index' 'fantasy' 'pooh' 'mickey' %}" class="pooh-link">プーさんのハニーハント</a>
-                        <a href="{% url 'index' 'fantasy' 'haunted' 'mickey' %}" class="haunted-link">ホーンテッドマンション</a>
-                        <a href="{% url 'index' 'fantasy' 'philhar' 'mickey' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
-                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'mickey' %}" class="fantasy-other-link">その他</a>
+                        <a href="{% url 'index' 'fantasy' 'alice' 'mickey' %}" class="attraction-link alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'mickey' %}" class="attraction-link small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'mickey' %}" class="attraction-link carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'mickey' %}" class="attraction-link snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'mickey' %}" class="attraction-link cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'mickey' %}" class="attraction-link dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'mickey' %}" class="attraction-link beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'mickey' %}" class="attraction-link peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'mickey' %}" class="attraction-link pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'mickey' %}" class="attraction-link pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'mickey' %}" class="attraction-link haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'mickey' %}" class="attraction-link philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'mickey' %}" class="attraction-link fantasy-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'fantasy' 'alice' 'trivia' %}" class="alice-link">アリスのティーパーティー</a>
-                        <a href="{% url 'index' 'fantasy' 'small' 'trivia' %}" class="small-link">イッツ・ア・スモールワールド</a>
-                        <a href="{% url 'index' 'fantasy' 'carousel' 'trivia' %}" class="carousel-link">キャッスルカルーセル</a>
-                        <a href="{% url 'index' 'fantasy' 'snow' 'trivia' %}" class="snow-link">白雪姫と七人のこびと</a>
-                        <a href="{% url 'index' 'fantasy' 'cinderella' 'trivia' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
-                        <a href="{% url 'index' 'fantasy' 'dumbo' 'trivia' %}" class="dumbo-link">空飛ぶダンボ</a>
-                        <a href="{% url 'index' 'fantasy' 'beast' 'trivia' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
-                        <a href="{% url 'index' 'fantasy' 'peter' 'trivia' %}" class="peter-link">ピーターパン空の旅</a>
-                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'trivia' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
-                        <a href="{% url 'index' 'fantasy' 'pooh' 'trivia' %}" class="pooh-link">プーさんのハニーハント</a>
-                        <a href="{% url 'index' 'fantasy' 'haunted' 'trivia' %}" class="haunted-link">ホーンテッドマンション</a>
-                        <a href="{% url 'index' 'fantasy' 'philhar' 'trivia' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
-                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'trivia' %}" class="fantasy-other-link">その他</a>
+                        <a href="{% url 'index' 'fantasy' 'alice' 'trivia' %}" class="attraction-link alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'trivia' %}" class="attraction-link small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'trivia' %}" class="attraction-link carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'trivia' %}" class="attraction-link snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'trivia' %}" class="attraction-link cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'trivia' %}" class="attraction-link dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'trivia' %}" class="attraction-link beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'trivia' %}" class="attraction-link peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'trivia' %}" class="attraction-link pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'trivia' %}" class="attraction-link pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'trivia' %}" class="attraction-link haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'trivia' %}" class="attraction-link philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'trivia' %}" class="attraction-link fantasy-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'fantasy' 'alice' 'other' %}" class="alice-link">アリスのティーパーティー</a>
-                        <a href="{% url 'index' 'fantasy' 'small' 'other' %}" class="small-link">イッツ・ア・スモールワールド</a>
-                        <a href="{% url 'index' 'fantasy' 'carousel' 'other' %}" class="carousel-link">キャッスルカルーセル</a>
-                        <a href="{% url 'index' 'fantasy' 'snow' 'other' %}" class="snow-link">白雪姫と七人のこびと</a>
-                        <a href="{% url 'index' 'fantasy' 'cinderella' 'other' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
-                        <a href="{% url 'index' 'fantasy' 'dumbo' 'other' %}" class="dumbo-link">空飛ぶダンボ</a>
-                        <a href="{% url 'index' 'fantasy' 'beast' 'other' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
-                        <a href="{% url 'index' 'fantasy' 'peter' 'other' %}" class="peter-link">ピーターパン空の旅</a>
-                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'other' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
-                        <a href="{% url 'index' 'fantasy' 'pooh' 'other' %}" class="pooh-link">プーさんのハニーハント</a>
-                        <a href="{% url 'index' 'fantasy' 'haunted' 'other' %}" class="haunted-link">ホーンテッドマンション</a>
-                        <a href="{% url 'index' 'fantasy' 'philhar' 'other' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
-                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'other' %}" class="fantasy-other-link">その他</a>
+                        <a href="{% url 'index' 'fantasy' 'alice' 'other' %}" class="attraction-link alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'other' %}" class="attraction-link small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'other' %}" class="attraction-link carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'other' %}" class="attraction-link snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'other' %}" class="attraction-link cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'other' %}" class="attraction-link dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'other' %}" class="attraction-link beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'other' %}" class="attraction-link peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'other' %}" class="attraction-link pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'other' %}" class="attraction-link pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'other' %}" class="attraction-link haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'other' %}" class="attraction-link philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'other' %}" class="attraction-link fantasy-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'fantasy' 'alice' 'all' %}" class="alice-link">アリスのティーパーティー</a>
-                        <a href="{% url 'index' 'fantasy' 'small' 'all' %}" class="small-link">イッツ・ア・スモールワールド</a>
-                        <a href="{% url 'index' 'fantasy' 'carousel' 'all' %}" class="carousel-link">キャッスルカルーセル</a>
-                        <a href="{% url 'index' 'fantasy' 'snow' 'all' %}" class="snow-link">白雪姫と七人のこびと</a>
-                        <a href="{% url 'index' 'fantasy' 'cinderella' 'all' %}" class="cinderella-link">シンデレラのフェアリーテイル・ホール</a>
-                        <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}" class="dumbo-link">空飛ぶダンボ</a>
-                        <a href="{% url 'index' 'fantasy' 'beast' 'all' %}" class="beast-link">美女と野獣“まほうのものがたり”</a>
-                        <a href="{% url 'index' 'fantasy' 'peter' 'all' %}" class="peter-link">ピーターパン空の旅</a>
-                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'all' %}" class="pinocchio-link">ピノキオの冒険旅行</a>
-                        <a href="{% url 'index' 'fantasy' 'pooh' 'all' %}" class="pooh-link">プーさんのハニーハント</a>
-                        <a href="{% url 'index' 'fantasy' 'haunted' 'all' %}" class="haunted-link">ホーンテッドマンション</a>
-                        <a href="{% url 'index' 'fantasy' 'philhar' 'all' %}" class="philhar-link">ミッキーのフィルハーマジック</a>
-                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'all' %}" class="fantasy-other-link">その他</a>
+                        <a href="{% url 'index' 'fantasy' 'alice' 'all' %}" class="attraction-link alice-link">アリスのティーパーティー</a>
+                        <a href="{% url 'index' 'fantasy' 'small' 'all' %}" class="attraction-link small-link">イッツ・ア・スモールワールド</a>
+                        <a href="{% url 'index' 'fantasy' 'carousel' 'all' %}" class="attraction-link carousel-link">キャッスルカルーセル</a>
+                        <a href="{% url 'index' 'fantasy' 'snow' 'all' %}" class="attraction-link snow-link">白雪姫と七人のこびと</a>
+                        <a href="{% url 'index' 'fantasy' 'cinderella' 'all' %}" class="attraction-link cinderella-link">シンデレラのフェアリーテイル・ホール</a>
+                        <a href="{% url 'index' 'fantasy' 'dumbo' 'all' %}" class="attraction-link dumbo-link">空飛ぶダンボ</a>
+                        <a href="{% url 'index' 'fantasy' 'beast' 'all' %}" class="attraction-link beast-link">美女と野獣“まほうのものがたり”</a>
+                        <a href="{% url 'index' 'fantasy' 'peter' 'all' %}" class="attraction-link peter-link">ピーターパン空の旅</a>
+                        <a href="{% url 'index' 'fantasy' 'pinocchio' 'all' %}" class="attraction-link pinocchio-link">ピノキオの冒険旅行</a>
+                        <a href="{% url 'index' 'fantasy' 'pooh' 'all' %}" class="attraction-link pooh-link">プーさんのハニーハント</a>
+                        <a href="{% url 'index' 'fantasy' 'haunted' 'all' %}" class="attraction-link haunted-link">ホーンテッドマンション</a>
+                        <a href="{% url 'index' 'fantasy' 'philhar' 'all' %}" class="attraction-link philhar-link">ミッキーのフィルハーマジック</a>
+                        <a href="{% url 'index' 'fantasy' 'fantasy-other' 'all' %}" class="attraction-link fantasy-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'toon' %}
                     <img src="{% static 'img/ToonTown_cut.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'toon' 'gadget' 'story' %}" class="gadget-link">ガジェットのゴーコースター</a>
-                        <a href="{% url 'index' 'toon' 'goofy' 'story' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
-                        <a href="{% url 'index' 'toon' 'chip' 'story' %}" class="chip-link">チップとデールのツリーハウス</a>
-                        <a href="{% url 'index' 'toon' 'park' 'story' %}" class="park-link">トゥーンパーク</a>
-                        <a href="{% url 'index' 'toon' 'donald' 'story' %}" class="donald-link">ドナルドのボート</a>
-                        <a href="{% url 'index' 'toon' 'minnie' 'story' %}" class="minnie-link">ミニーの家</a>
-                        <a href="{% url 'index' 'toon' 'roger' 'story' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
-                        <a href="{% url 'index' 'toon' 'style' 'story' %}" class="style-link">ミニーのスタイルスタジオ</a>
-                        <a href="{% url 'index' 'toon' 'mickey' 'story' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
-                        <a href="{% url 'index' 'toon' 'toon-other' 'story' %}" class="toon-other-link">その他</a>
+                        <a href="{% url 'index' 'toon' 'gadget' 'story' %}" class="attraction-link gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'story' %}" class="attraction-link goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'story' %}" class="attraction-link chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'story' %}" class="attraction-link park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'story' %}" class="attraction-link donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'story' %}" class="attraction-link minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'story' %}" class="attraction-link roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'story' %}" class="attraction-link style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'story' %}" class="attraction-link mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'story' %}" class="attraction-link toon-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'toon' 'gadget' 'mickey' %}" class="gadget-link">ガジェットのゴーコースター</a>
-                        <a href="{% url 'index' 'toon' 'goofy' 'mickey' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
-                        <a href="{% url 'index' 'toon' 'chip' 'mickey' %}" class="chip-link">チップとデールのツリーハウス</a>
-                        <a href="{% url 'index' 'toon' 'park' 'mickey' %}" class="park-link">トゥーンパーク</a>
-                        <a href="{% url 'index' 'toon' 'donald' 'mickey' %}" class="donald-link">ドナルドのボート</a>
-                        <a href="{% url 'index' 'toon' 'minnie' 'mickey' %}" class="minnie-link">ミニーの家</a>
-                        <a href="{% url 'index' 'toon' 'roger' 'mickey' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
-                        <a href="{% url 'index' 'toon' 'style' 'mickey' %}" class="style-link">ミニーのスタイルスタジオ</a>
-                        <a href="{% url 'index' 'toon' 'mickey' 'mickey' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
-                        <a href="{% url 'index' 'toon' 'toon-other' 'mickey' %}" class="toon-other-link">その他</a>
+                        <a href="{% url 'index' 'toon' 'gadget' 'mickey' %}" class="attraction-link gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'mickey' %}" class="attraction-link goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'mickey' %}" class="attraction-link chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'mickey' %}" class="attraction-link park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'mickey' %}" class="attraction-link donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'mickey' %}" class="attraction-link minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'mickey' %}" class="attraction-link roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'mickey' %}" class="attraction-link style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'mickey' %}" class="attraction-link mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'mickey' %}" class="attraction-link toon-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'toon' 'gadget' 'trivia' %}" class="gadget-link">ガジェットのゴーコースター</a>
-                        <a href="{% url 'index' 'toon' 'goofy' 'trivia' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
-                        <a href="{% url 'index' 'toon' 'chip' 'trivia' %}" class="chip-link">チップとデールのツリーハウス</a>
-                        <a href="{% url 'index' 'toon' 'park' 'trivia' %}" class="park-link">トゥーンパーク</a>
-                        <a href="{% url 'index' 'toon' 'donald' 'trivia' %}" class="donald-link">ドナルドのボート</a>
-                        <a href="{% url 'index' 'toon' 'minnie' 'trivia' %}" class="minnie-link">ミニーの家</a>
-                        <a href="{% url 'index' 'toon' 'roger' 'trivia' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
-                        <a href="{% url 'index' 'toon' 'style' 'trivia' %}" class="style-link">ミニーのスタイルスタジオ</a>
-                        <a href="{% url 'index' 'toon' 'mickey' 'trivia' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
-                        <a href="{% url 'index' 'toon' 'toon-other' 'trivia' %}" class="toon-other-link">その他</a>
+                        <a href="{% url 'index' 'toon' 'gadget' 'trivia' %}" class="attraction-link gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'trivia' %}" class="attraction-link goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'trivia' %}" class="attraction-link chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'trivia' %}" class="attraction-link park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'trivia' %}" class="attraction-link donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'trivia' %}" class="attraction-link minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'trivia' %}" class="attraction-link roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'trivia' %}" class="attraction-link style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'trivia' %}" class="attraction-link mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'trivia' %}" class="attraction-link toon-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'toon' 'gadget' 'other' %}" class="gadget-link">ガジェットのゴーコースター</a>
-                        <a href="{% url 'index' 'toon' 'goofy' 'other' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
-                        <a href="{% url 'index' 'toon' 'chip' 'other' %}" class="chip-link">チップとデールのツリーハウス</a>
-                        <a href="{% url 'index' 'toon' 'park' 'other' %}" class="park-link">トゥーンパーク</a>
-                        <a href="{% url 'index' 'toon' 'donald' 'other' %}" class="donald-link">ドナルドのボート</a>
-                        <a href="{% url 'index' 'toon' 'minnie' 'other' %}" class="minnie-link">ミニーの家</a>
-                        <a href="{% url 'index' 'toon' 'roger' 'other' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
-                        <a href="{% url 'index' 'toon' 'style' 'other' %}" class="style-link">ミニーのスタイルスタジオ</a>
-                        <a href="{% url 'index' 'toon' 'mickey' 'other' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
-                        <a href="{% url 'index' 'toon' 'toon-other' 'other' %}" class="toon-other-link">その他</a>
+                        <a href="{% url 'index' 'toon' 'gadget' 'other' %}" class="attraction-link gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'other' %}" class="attraction-link goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'other' %}" class="attraction-link chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'other' %}" class="attraction-link park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'other' %}" class="attraction-link donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'other' %}" class="attraction-link minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'other' %}" class="attraction-link roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'other' %}" class="attraction-link style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'other' %}" class="attraction-link mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'other' %}" class="attraction-link toon-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'toon' 'gadget' 'all' %}" class="gadget-link">ガジェットのゴーコースター</a>
-                        <a href="{% url 'index' 'toon' 'goofy' 'all' %}" class="goofy-link">グーフィーのペイント＆プレイハウス</a>
-                        <a href="{% url 'index' 'toon' 'chip' 'all' %}" class="chip-link">チップとデールのツリーハウス</a>
-                        <a href="{% url 'index' 'toon' 'park' 'all' %}" class="park-link">トゥーンパーク</a>
-                        <a href="{% url 'index' 'toon' 'donald' 'all' %}" class="donald-link">ドナルドのボート</a>
-                        <a href="{% url 'index' 'toon' 'minnie' 'all' %}" class="minnie-link">ミニーの家</a>
-                        <a href="{% url 'index' 'toon' 'roger' 'all' %}" class="roger-link">ロジャーラビットのカートゥーンスピン</a>
-                        <a href="{% url 'index' 'toon' 'style' 'all' %}" class="style-link">ミニーのスタイルスタジオ</a>
-                        <a href="{% url 'index' 'toon' 'mickey' 'all' %}" class="mickey-link">ミッキーの家とミート・ミッキー</a>
-                        <a href="{% url 'index' 'toon' 'toon-other' 'all' %}" class="toon-other-link">その他</a>
+                        <a href="{% url 'index' 'toon' 'gadget' 'all' %}" class="attraction-link gadget-link">ガジェットのゴーコースター</a>
+                        <a href="{% url 'index' 'toon' 'goofy' 'all' %}" class="attraction-link goofy-link">グーフィーのペイント＆プレイハウス</a>
+                        <a href="{% url 'index' 'toon' 'chip' 'all' %}" class="attraction-link chip-link">チップとデールのツリーハウス</a>
+                        <a href="{% url 'index' 'toon' 'park' 'all' %}" class="attraction-link park-link">トゥーンパーク</a>
+                        <a href="{% url 'index' 'toon' 'donald' 'all' %}" class="attraction-link donald-link">ドナルドのボート</a>
+                        <a href="{% url 'index' 'toon' 'minnie' 'all' %}" class="attraction-link minnie-link">ミニーの家</a>
+                        <a href="{% url 'index' 'toon' 'roger' 'all' %}" class="attraction-link roger-link">ロジャーラビットのカートゥーンスピン</a>
+                        <a href="{% url 'index' 'toon' 'style' 'all' %}" class="attraction-link style-link">ミニーのスタイルスタジオ</a>
+                        <a href="{% url 'index' 'toon' 'mickey' 'all' %}" class="attraction-link mickey-link">ミッキーの家とミート・ミッキー</a>
+                        <a href="{% url 'index' 'toon' 'toon-other' 'all' %}" class="attraction-link toon-other-link">その他</a>
                     {% endif %}
                 {% elif area == 'tomorrow' %}
                     <img src="{% static 'img/TomorrowLand_cut.png' %}" alt="" class="top-pic">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'tomorrow' 'tours' 'story' %}" class="tours-link">スター・ツアーズ</a>
-                        <a href="{% url 'index' 'tomorrow' 'stitch' 'story' %}" class="stitch-link">スティッチ・エンカウンター</a>
-                        <a href="{% url 'index' 'tomorrow' 'space' 'story' %}" class="space-link">スペース・マウンテン</a>
-                        <a href="{% url 'index' 'tomorrow' 'buzz' 'story' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
-                        <a href="{% url 'index' 'tomorrow' 'baymax' 'story' %}" class="baymax-link">ベイマックスのハッピーライド</a>
-                        <a href="{% url 'index' 'tomorrow' 'monsters' 'story' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
-                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'story' %}" class="tomorrow-other-link">その他</a>
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'story' %}" class="attraction-link tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'story' %}" class="attraction-link stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'story' %}" class="attraction-link space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'story' %}" class="attraction-link buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'story' %}" class="attraction-link baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'story' %}" class="attraction-link monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'story' %}" class="attraction-link tomorrow-other-link">その他</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'tomorrow' 'tours' 'mickey' %}" class="tours-link">スター・ツアーズ</a>
-                        <a href="{% url 'index' 'tomorrow' 'stitch' 'mickey' %}" class="stitch-link">スティッチ・エンカウンター</a>
-                        <a href="{% url 'index' 'tomorrow' 'space' 'mickey' %}" class="space-link">スペース・マウンテン</a>
-                        <a href="{% url 'index' 'tomorrow' 'buzz' 'mickey' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
-                        <a href="{% url 'index' 'tomorrow' 'baymax' 'mickey' %}" class="baymax-link">ベイマックスのハッピーライド</a>
-                        <a href="{% url 'index' 'tomorrow' 'monsters' 'mickey' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
-                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'mickey' %}" class="tomorrow-other-link">その他</a>
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'mickey' %}" class="attraction-link tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'mickey' %}" class="attraction-link stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'mickey' %}" class="attraction-link space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'mickey' %}" class="attraction-link buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'mickey' %}" class="attraction-link baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'mickey' %}" class="attraction-link monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'mickey' %}" class="attraction-link tomorrow-other-link">その他</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'tomorrow' 'tours' 'trivia' %}" class="tours-link">スター・ツアーズ</a>
-                        <a href="{% url 'index' 'tomorrow' 'stitch' 'trivia' %}" class="stitch-link">スティッチ・エンカウンター</a>
-                        <a href="{% url 'index' 'tomorrow' 'space' 'trivia' %}" class="space-link">スペース・マウンテン</a>
-                        <a href="{% url 'index' 'tomorrow' 'buzz' 'trivia' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
-                        <a href="{% url 'index' 'tomorrow' 'baymax' 'trivia' %}" class="baymax-link">ベイマックスのハッピーライド</a>
-                        <a href="{% url 'index' 'tomorrow' 'monsters' 'trivia' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
-                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'trivia' %}" class="tomorrow-other-link">その他</a>
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'trivia' %}" class="attraction-link tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'trivia' %}" class="attraction-link stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'trivia' %}" class="attraction-link space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'trivia' %}" class="attraction-link buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'trivia' %}" class="attraction-link baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'trivia' %}" class="attraction-link monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'trivia' %}" class="attraction-link tomorrow-other-link">その他</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'tomorrow' 'tours' 'other' %}" class="tours-link">スター・ツアーズ</a>
-                        <a href="{% url 'index' 'tomorrow' 'stitch' 'other' %}" class="stitch-link">スティッチ・エンカウンター</a>
-                        <a href="{% url 'index' 'tomorrow' 'space' 'other' %}" class="space-link">スペース・マウンテン</a>
-                        <a href="{% url 'index' 'tomorrow' 'buzz' 'other' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
-                        <a href="{% url 'index' 'tomorrow' 'baymax' 'other' %}" class="baymax-link">ベイマックスのハッピーライド</a>
-                        <a href="{% url 'index' 'tomorrow' 'monsters' 'other' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
-                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'other' %}" class="tomorrow-other-link">その他</a>
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'other' %}" class="attraction-link tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'other' %}" class="attraction-link stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'other' %}" class="attraction-link space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'other' %}" class="attraction-link buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'other' %}" class="attraction-link baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'other' %}" class="attraction-link monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'other' %}" class="attraction-link tomorrow-other-link">その他</a>
                     {% else %}
-                        <a href="{% url 'index' 'tomorrow' 'tours' 'all' %}" class="tours-link">スター・ツアーズ</a>
-                        <a href="{% url 'index' 'tomorrow' 'stitch' 'all' %}" class="stitch-link">スティッチ・エンカウンター</a>
-                        <a href="{% url 'index' 'tomorrow' 'space' 'all' %}" class="space-link">スペース・マウンテン</a>
-                        <a href="{% url 'index' 'tomorrow' 'buzz' 'all' %}" class="buzz-link">バズ・ライトイヤーのアストロブラスター</a>
-                        <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}" class="baymax-link">ベイマックスのハッピーライド</a>
-                        <a href="{% url 'index' 'tomorrow' 'monsters' 'all' %}" class="monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
-                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'all' %}" class="tomorrow-other-link">その他</a>
+                        <a href="{% url 'index' 'tomorrow' 'tours' 'all' %}" class="attraction-link tours-link">スター・ツアーズ</a>
+                        <a href="{% url 'index' 'tomorrow' 'stitch' 'all' %}" class="attraction-link stitch-link">スティッチ・エンカウンター</a>
+                        <a href="{% url 'index' 'tomorrow' 'space' 'all' %}" class="attraction-link space-link">スペース・マウンテン</a>
+                        <a href="{% url 'index' 'tomorrow' 'buzz' 'all' %}" class="attraction-link buzz-link">バズ・ライトイヤーのアストロブラスター</a>
+                        <a href="{% url 'index' 'tomorrow' 'baymax' 'all' %}" class="attraction-link baymax-link">ベイマックスのハッピーライド</a>
+                        <a href="{% url 'index' 'tomorrow' 'monsters' 'all' %}" class="attraction-link monsters-link">モンスターズ・インク<br>"ライド&ゴーシーク！"</a>
+                        <a href="{% url 'index' 'tomorrow' 'tomorrow-other' 'all' %}" class="attraction-link tomorrow-other-link">その他</a>
                     {% endif %}
                 {% else %}
                     <img src="{% static 'img/TDL_top.png' %}" class="top-pic" alt="">
                     {% if category == 'story' %}
-                        <a href="{% url 'index' 'bazaar' 'story' %}" class="bazaar-link">ワールドバザール</a>
-                        <a href="{% url 'index' 'adventure' 'story' %}" class="adventure-link">アドベンチャーランド</a>
-                        <a href="{% url 'index' 'western' 'story' %}" class="western-link">ウエスタンランド</a>
-                        <a href="{% url 'index' 'critter' 'story' %}" class="critter-link">クリッターカントリー</a>
-                        <a href="{% url 'index' 'fantasy' 'story' %}" class="fantasy-link">ファンタジーランド</a>
-                        <a href="{% url 'index' 'toon' 'story' %}" class="toon-link">トゥーンタウン</a>
-                        <a href="{% url 'index' 'tomorrow' 'story' %}" class="tomorrow-link">トゥモローランド</a>
+                        <a href="{% url 'index' 'bazaar' 'story' %}" class="area-link bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'story' %}" class="area-link adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'story' %}" class="area-link western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'story' %}" class="area-link critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'story' %}" class="area-link fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'story' %}" class="area-link toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'story' %}" class="area-link tomorrow-link">トゥモローランド</a>
                     {% elif category == 'mickey' %}
-                        <a href="{% url 'index' 'bazaar' 'mickey' %}" class="bazaar-link">ワールドバザール</a>
-                        <a href="{% url 'index' 'adventure' 'mickey' %}" class="adventure-link">アドベンチャーランド</a>
-                        <a href="{% url 'index' 'western' 'mickey' %}" class="western-link">ウエスタンランド</a>
-                        <a href="{% url 'index' 'critter' 'mickey' %}" class="critter-link">クリッターカントリー</a>
-                        <a href="{% url 'index' 'fantasy' 'mickey' %}" class="fantasy-link">ファンタジーランド</a>
-                        <a href="{% url 'index' 'toon' 'mickey' %}" class="toon-link">トゥーンタウン</a>
-                        <a href="{% url 'index' 'tomorrow' 'mickey' %}" class="tomorrow-link">トゥモローランド</a>
+                        <a href="{% url 'index' 'bazaar' 'mickey' %}" class="area-link bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'mickey' %}" class="area-link adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'mickey' %}" class="area-link western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'mickey' %}" class="area-link critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'mickey' %}" class="area-link fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'mickey' %}" class="area-link toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'mickey' %}" class="area-link tomorrow-link">トゥモローランド</a>
                     {% elif category == 'trivia' %}
-                        <a href="{% url 'index' 'bazaar' 'trivia' %}" class="bazaar-link">ワールドバザール</a>
-                        <a href="{% url 'index' 'adventure' 'trivia' %}" class="adventure-link">アドベンチャーランド</a>
-                        <a href="{% url 'index' 'western' 'trivia' %}" class="western-link">ウエスタンランド</a>
-                        <a href="{% url 'index' 'critter' 'trivia' %}" class="critter-link">クリッターカントリー</a>
-                        <a href="{% url 'index' 'fantasy' 'trivia' %}" class="fantasy-link">ファンタジーランド</a>
-                        <a href="{% url 'index' 'toon' 'trivia' %}" class="toon-link">トゥーンタウン</a>
-                        <a href="{% url 'index' 'tomorrow' 'trivia' %}" class="tomorrow-link">トゥモローランド</a>
+                        <a href="{% url 'index' 'bazaar' 'trivia' %}" class="area-link bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'trivia' %}" class="area-link adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'trivia' %}" class="area-link western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'trivia' %}" class="area-link critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'trivia' %}" class="area-link fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'trivia' %}" class="area-link toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'trivia' %}" class="area-link tomorrow-link">トゥモローランド</a>
                     {% elif category == 'other' %}
-                        <a href="{% url 'index' 'bazaar' 'other' %}" class="bazaar-link">ワールドバザール</a>
-                        <a href="{% url 'index' 'adventure' 'other' %}" class="adventure-link">アドベンチャーランド</a>
-                        <a href="{% url 'index' 'western' 'other' %}" class="western-link">ウエスタンランド</a>
-                        <a href="{% url 'index' 'critter' 'other' %}" class="critter-link">クリッターカントリー</a>
-                        <a href="{% url 'index' 'fantasy' 'other' %}" class="fantasy-link">ファンタジーランド</a>
-                        <a href="{% url 'index' 'toon' 'other' %}" class="toon-link">トゥーンタウン</a>
-                        <a href="{% url 'index' 'tomorrow' 'other' %}" class="tomorrow-link">トゥモローランド</a>
+                        <a href="{% url 'index' 'bazaar' 'other' %}" class="area-link bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'other' %}" class="area-link adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'other' %}" class="area-link western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'other' %}" class="area-link critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'other' %}" class="area-link fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'other' %}" class="area-link toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'other' %}" class="area-link tomorrow-link">トゥモローランド</a>
                     {% elif category == 'all' %}
-                        <a href="{% url 'index' 'bazaar' 'all' %}" class="bazaar-link">ワールドバザール</a>
-                        <a href="{% url 'index' 'adventure' 'all' %}" class="adventure-link">アドベンチャーランド</a>
-                        <a href="{% url 'index' 'western' 'all' %}" class="western-link">ウエスタンランド</a>
-                        <a href="{% url 'index' 'critter' 'all' %}" class="critter-link">クリッターカントリー</a>
-                        <a href="{% url 'index' 'fantasy' 'all' %}" class="fantasy-link">ファンタジーランド</a>
-                        <a href="{% url 'index' 'toon' 'all' %}" class="toon-link">トゥーンタウン</a>
-                        <a href="{% url 'index' 'tomorrow' 'all' %}" class="tomorrow-link">トゥモローランド</a>
+                        <a href="{% url 'index' 'bazaar' 'all' %}" class="area-link bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' 'all' %}" class="area-link adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' 'all' %}" class="area-link western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' 'all' %}" class="area-link critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' 'all' %}" class="area-link fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' 'all' %}" class="area-link toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' 'all' %}" class="area-link tomorrow-link">トゥモローランド</a>
                     {% else %}
-                        <a href="{% url 'index' 'bazaar' %}" class="bazaar-link">ワールドバザール</a>
-                        <a href="{% url 'index' 'adventure' %}" class="adventure-link">アドベンチャーランド</a>
-                        <a href="{% url 'index' 'western' %}" class="western-link">ウエスタンランド</a>
-                        <a href="{% url 'index' 'critter' %}" class="critter-link">クリッターカントリー</a>
-                        <a href="{% url 'index' 'fantasy' %}" class="fantasy-link">ファンタジーランド</a>
-                        <a href="{% url 'index' 'toon' %}" class="toon-link">トゥーンタウン</a>
-                        <a href="{% url 'index' 'tomorrow' %}" class="tomorrow-link">トゥモローランド</a>
+                        <a href="{% url 'index' 'bazaar' %}" class="area-link bazaar-link">ワールドバザール</a>
+                        <a href="{% url 'index' 'adventure' %}" class="area-link adventure-link">アドベンチャーランド</a>
+                        <a href="{% url 'index' 'western' %}" class="area-link western-link">ウエスタンランド</a>
+                        <a href="{% url 'index' 'critter' %}" class="area-link critter-link">クリッターカントリー</a>
+                        <a href="{% url 'index' 'fantasy' %}" class="area-link fantasy-link">ファンタジーランド</a>
+                        <a href="{% url 'index' 'toon' %}" class="area-link toon-link">トゥーンタウン</a>
+                        <a href="{% url 'index' 'tomorrow' %}" class="area-link tomorrow-link">トゥモローランド</a>
                     {% endif %}
                 {% endif %}
             </div>
