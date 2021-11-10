@@ -1,10 +1,29 @@
+# Webコンテナのビルド内容の定義
+# manage.py collectstatic を実行する
+# => 「nginx」Dockerイメージでは実行できない
+#   => python3をインストール? No
+#   => マルチステージビルド!!
+#     => 1. pythonイメージを使って、collectstaticを実行する (-> /static/ フォルダが作られる)
+#     => 2. /static を nginx イメージに渡す（コピーする）
+#     => 3. nginx のビルド内容の定義
+
+# 1. python:3.8.3 ステージ: ここから
+FROM python:3.8.3 as builder
+# 作業ディレクトリを指定する(/app ディレクトリは自動作成される)
+WORKDIR /app
+
+COPY ./ ./
+RUN pip3 install -r requirements.txt
+RUN python3 manage.py collectstatic --noinput
+# python:3.8.3 ステージ: ここまで
+
 # 一般的には latest ではなくバージョン指定して固定する
-FROM nginx:latest
+FROM nginx:latest as runner
 
 # nginx の設定ファイルを渡す
 COPY ./nginx/conf.d/ /etc/nginx/conf.d/
 
 # static ファイルを渡す
 # (Apache でいう /var/www/html)
-COPY ./static/ /usr/share/nginx/static/
+COPY --from=builder /app/static/ /usr/share/nginx/static/
 EXPOSE 8080

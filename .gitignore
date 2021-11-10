@@ -8,3 +8,4 @@ images
 media
 local_settings.py
 .env
+/static/
