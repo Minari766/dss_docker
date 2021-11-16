@@ -26,6 +26,7 @@ class PostForm(forms.Form):
     #         self.add_error('area', 'お名前に禁止ワードが含まれています')
     #     return area
 
+
 CATEGORIES = (
     ('0', '----選択してください'),
     ('1', 'このサイトについて'),

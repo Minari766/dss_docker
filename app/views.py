@@ -117,14 +117,14 @@ class CreatePostView(LoginRequiredMixin, View):
             post_data.author = request.user
             post_data.title = form.cleaned_data['title']
             area = form.cleaned_data['area']
-            # post_data.area = Area.objects.get(name=area)
-            post_data.area = get_object_or_404(Area, name=area)
+            post_data.area = Area.objects.get(name=area)
+            # post_data.area = get_object_or_404(Area, name=area)
             attraction = form.cleaned_data['attraction']
-            # post_data.attraction = Attraction.objects.get(name=attraction)
-            post_data.attraction = get_object_or_404(Attraction, name=attraction)
+            post_data.attraction = Attraction.objects.get(name=attraction)
+            # post_data.attraction = get_object_or_404(Attraction, name=attraction)
             category = form.cleaned_data['category']
-            # post_data.category = Category.objects.get(name=category)
-            post_data.category = get_object_or_404(Category, name=category)
+            post_data.category = Category.objects.get(name=category)
+            # post_data.category = get_object_or_404(Category, name=category)
             post_data.content = form.cleaned_data['content']
             if request.FILES:
                 post_data.image = request.FILES.get('image')
